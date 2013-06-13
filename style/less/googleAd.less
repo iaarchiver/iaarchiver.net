@@ -1,0 +1,63 @@
+@import "assets/lib";
+@import "assets/base";
+
+@import "var";
+
+.googleAd{
+	display:none;
+	ins{ background: none;}
+
+	.slider{
+		.rounded(3px);
+		position: fixed;
+		right:0;
+		width: 0px; height: 250px;
+		
+		z-index: 99;
+
+		display: none;
+		background-color: rgba(0,0,0,0.05);
+		border: 1px solid rgba(128,128,128,.1);
+		padding: 20px;
+
+		&.x300{ bottom: 10px; max-width: 300px;}
+		&.x50 { bottom: 303px; height:50px; max-width: 300px;}
+		&.x250{ bottom: 396px; max-width: 250px;}
+		span.noad{
+			.centering(30px,42px);
+
+			padding: 0 12px;
+			color: #dadada;
+			font-size: 16px;
+			text-align: center;
+		}
+	}
+}
+
+.sidebar,.ex-sidebar{
+	.transition(opacity .1s linear);
+}
+
+@media screen and (min-width: @w_portrait_em) {
+	.googleAd{ display:block;}
+}
+
+@media screen and (min-width: @w_landscape_em) and (max-width: @w_full_em) {
+	.sidebar.covered{
+		-webkit-backface-visibility: hidden; // avoid blinking in transition for Safari
+		opacity: .4;
+	}
+}
+@media screen and (min-width: @w_full_em) and (max-width: ~`parseInt("@{w_full}")+350+"px"`){
+	.ex-sidebar.covered{
+		-webkit-backface-visibility: hidden; // avoid blinking in transition for Safari
+		opacity: .4;
+	}
+}
+
+@media screen and (min-width: ~`parseInt("@{w_full}")+300+"px"`){
+	.googleAd .slider{
+		right: none !important;
+		left: ~`parseInt("@{w_full}")+70+"px"` !important;
+	}
+}

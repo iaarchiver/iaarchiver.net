@@ -1,0 +1,40 @@
+///////////////////////////////////  DEBUG OR HACK //
+
+.bordered(@w:1px){
+	border: @w solid black;
+	margin: -@w;
+}
+
+.webkit, .firefox{
+	display: none;
+}
+
+/* visible only in web-kit */
+@media screen and (-webkit-min-device-pixel-ratio:0){
+	.webkit{
+		display: inline !important;
+	}
+}
+
+/* visible only in firefox */
+.firefox,x:-moz-any-link, x:default{
+	display: inline !important;
+}
+
+.rgba2rgb(@r,@g,@b,@a){
+	@R : `Math.floor((1-@{a})*(255-@{r}) +@{a}*@{r}).toString(16)`;
+	@G : `Math.floor((1-@{a})*(255-@{g}) +@{a}*@{g}).toString(16)`;
+	@B : `Math.floor((1-@{a})*(255-@{b}) +@{a}*@{b}).toString(16)`;
+	background: ~`'#'+@{R}+@{G}+@{B}`;
+}
+.rgba_bg(@r,@g,@b,@a){
+	@R : `Math.floor((1-@{a})*(255-@{r}) +@{a}*@{r}).toString(16)`;
+	@G : `Math.floor((1-@{a})*(255-@{g}) +@{a}*@{g}).toString(16)`;
+	@B : `Math.floor((1-@{a})*(255-@{b}) +@{a}*@{b}).toString(16)`;
+	@A : `Math.floor(@{a}*255).toString(16)`;
+	background: ~`'#'+@{R}+@{G}+@{B}`;
+	filter:~`'progid:DXImageTransform.Microsoft.gradient(startColorstr=#'+@{R}+@{G}+@{B}+',endColorstr=#'+@{R}+@{G}+@{B}+')'`;
+}
+section{
+	.rgba_bg(64,64,64,0.75);
+}

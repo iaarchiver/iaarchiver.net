@@ -1,0 +1,19 @@
+{
+  "name": "iaarchiver",
+  "version": "0.0.0",
+  "description": "http://iaarchiver.net",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "iaarchiver",
+  "license": "Appache2.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-contrib-less": "~0.6.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.2"
+  }
+}

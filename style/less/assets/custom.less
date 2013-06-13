@@ -1,0 +1,67 @@
+/////////////////////////////////// CUSTOM CLASSES //
+
+.ul_floatList(){
+	.clearfix;
+	margin:0 !important; padding:0 !important;
+	li{
+		list-style: none;
+		&>a{
+			color: #555;
+			background: rgba(0,0,0,0.05);
+			border: 1px solid rgba(128,128,128,.1);
+			.box-shadow (0, 0, 5px,#000)
+
+
+			&:hover,&.hover{
+				color: #fff;
+				text-decoration: none;
+				background: rgba(64,64,64,0.75);
+				border: 1px solid rgba(128,128,128,0.5);
+				b { color: #fff !important; font-weight: bold;}
+			}
+		}
+		&>span{
+			width: auto;
+			color: #bbb;
+			background: rgba(0,0,0,.05);
+			border: 1px solid rgba(0,0,0,.03);
+		}
+		&>a, &>span{
+			.rounded(3px);
+
+			display: block;
+			float: left;
+			margin: 0 1px 1px 0;
+			padding: 1px 12px;	
+		}
+	}
+}
+
+.ul_floatList2(){
+	.clearfix;
+	.item{
+		list-style: none;
+		.rounded(3px);
+		
+		width: 210px;
+		display: block;
+		float: left;
+		margin: 0 1px 1px 0;
+		padding: 1px 12px;	
+
+		color: #555;
+		background: rgba(0,0,0,0.05);
+		border: 1px solid rgba(128,128,128,.1);
+	}
+}
+.panel(){
+	.rounded(3px);
+	color: #555;
+	background-color: rgba(0,0,0,0.05);
+	border: 1px solid rgba(128,128,128,.1);
+	&:hover{
+		color: #fff;
+		background: rgba(64,64,64,0.75);
+		border: 1px solid rgba(128,128,128,0.5);
+	}
+}
