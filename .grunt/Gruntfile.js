@@ -34,11 +34,18 @@ module.exports = function(grunt) {
 			server: {
 				options:{
 					port: 9000,
-					base: 'html'
+					base: 'html',
+					middleware: function(connect,options){
+						
+					}
 				}
 			}
 		},
 		watch: {
+			options: {
+				livereload: true,
+				nospawn: true
+			},
 			less : {
 				files : ['../style/less/**/*.less'],
 				tasks : ['less']
