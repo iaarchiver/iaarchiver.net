@@ -30,7 +30,15 @@ module.exports = function(grunt) {
 				dest: '../scripts/all.min.js'
 			}
 		},
-		watch : {
+		connect: {
+			server: {
+				options:{
+					port: 9000,
+					base: 'html'
+				}
+			}
+		},
+		watch: {
 			less : {
 				files : ['../style/less/**/*.less'],
 				tasks : ['less']
@@ -50,5 +58,5 @@ module.exports = function(grunt) {
 	}
 
 	// set default tasks
-	grunt.registerTask('default',['less', 'concat', 'uglify','watch']);
+	grunt.registerTask('default',['less', 'concat', 'uglify', 'connect', 'watch']);
 };
