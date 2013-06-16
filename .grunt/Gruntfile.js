@@ -42,6 +42,7 @@ module.exports = function(grunt) {
 				port: 9000,
 				base: '..',
 				middleware: function (connect, options) {
+					connect.static.mime.default_type = 'text/html';
 				    return [
 				        rewriteRulesSnippet, // RewriteRules support
 				        connect.static(require('path').resolve(options.base)) // mount filesystem
