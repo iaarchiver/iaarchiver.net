@@ -18,7 +18,6 @@
 
 /** fonts **/
 @import "websymbols";
-@import url(http://fonts.googleapis.com/css?family=Glegoo);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
 /////////////////////////////////// STYLE //
@@ -208,6 +207,7 @@ iframe.frame{
 
 		height: @_height;
 		position: relative;
+		left: 70px;
 
 		#to_cluster {
 			position: absolute;
@@ -216,26 +216,9 @@ iframe.frame{
 			height: @_height;
 			top: 0; left: 0;
 			display: block;
-			font-family: 'Glegoo';
+			font-family: 'Open Sans';
 			font-size: 115px;
-			font-weight: normal;
-
-			.btn {
-				z-index: 9;
-				text-indent: 0;
-
-				color: #ccc;
-				text-shadow: 0 0 1px #ddd;
-				margin-left: -50px;
-				font-size: 25px;
-				line-height: 50px;
-
-				cursor: pointer;
-				.centering(30,50);
-				&:hover{
-					color: @c_symb;
-				}
-			}
+			font-weight: 300;
 		}
 		.clustered svg {
 		  position: absolute;
@@ -378,7 +361,6 @@ iframe.frame{
 			width: 180px;
 			background: none;
 			border-color: transparent;
-
 
 			&:hover{
 				.panel();

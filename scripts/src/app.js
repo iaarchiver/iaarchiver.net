@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 function refresh(){
 	$('[data-spy="scroll"]').scrollspy('refresh');
-	$('.ex-sidebar').scrollable();
+	$('.ex-sidebar').scrollable('refresh');
 }
 
 $(window).resize(function() {

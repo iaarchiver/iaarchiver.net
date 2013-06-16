@@ -15,7 +15,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--[if lt IE 9]>
-    <script src="http://iaarchiver-storage.appspot.com/scripts/ie8.js"></script>
+    <script src="http://s3.iaarchiver.net/scripts/ie8.js"></script>
     <![endif]-->
 
     <meta charset="utf-8">
@@ -30,21 +30,22 @@
     <link rel="shortcut icon" href="http://scriptogr.am/lib/img/favicon.ico">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{{base_url}}/feed" />
     {{css}}
-    <link rel="stylesheet" type="text/css" class="modifiable-css" href="http://iaarchiver-storage.appspot.com/style/css/style.min.css" />
-    <!-- GoogleAnalitycs -->
-    <script type="text/javascript">
-    
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-29308779-1']);
-      _gaq.push(['_trackPageview']);
-    
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-    <!-- [END] GoogleAnalitycs -->
+    <link rel="stylesheet" type="text/css" class="modifiable-css" href="http://s3.iaarchiver.net/style/css/style.min.css" />
+
+  <!-- GoogleAnalitycs -->
+  <script type="text/javascript">
+  
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-29308779-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <!-- [END] GoogleAnalitycs -->
   </head>
   
   <body data-spy="scroll" data-target="#sspy">
@@ -106,24 +107,6 @@
         </ul>
       </div><!--[END] .sidebar-content -->
     </div><!--[END] .sidebar -->
-    
-    <!-- .ex-sidebar -->
-    <div class="ex-sidebar {{#is_index}}index{{/is_index}}">
-      <ul class="ex-sidebar-content">
-          <span class="websymbols icon loader" id="recently1">
-            <img src="http://iaarchiver-storage.appspot.com/style/img/dummy.gif" style="display:none" onload="var p=this.parentNode,i=0;p.insertBefore(document.createTextNode(),this);(function a(){p.childNodes[1].nodeValue=i=i>=7?0:i+1;setTimeout(a,100);p.style.opacity=((i<5)?i+2:10-i)/10;})()" />
-          </span>
-          <span class="websymbols icon loader" id="recently2">
-            <img src="http://iaarchiver-storage.appspot.com/style/img/dummy.gif" style="display:none" onload="var p=this.parentNode,i=0;p.insertBefore(document.createTextNode(),this);(function a(){p.childNodes[1].nodeValue=i=i>=7?0:i+1;setTimeout(a,120);p.style.opacity=((i<5)?i+2:10-i)/10;})()" />
-          </span>
-          <span class="websymbols icon loader" id="recently3">
-            <img src="http://iaarchiver-storage.appspot.com/style/img/dummy.gif" style="display:none" onload="var p=this.parentNode,i=0;p.insertBefore(document.createTextNode(),this);(function a(){p.childNodes[1].nodeValue=i=i>=7?0:i+1;setTimeout(a,160);p.style.opacity=((i<5)?i+2:10-i)/10;})()" />
-          </span>
-          <span class="websymbols icon loader" id="recently4">
-            <img src="http://iaarchiver-storage.appspot.com/style/img/dummy.gif" style="display:none" onload="var p=this.parentNode,i=0;p.insertBefore(document.createTextNode(),this);(function a(){p.childNodes[1].nodeValue=i=i>=7?0:i+1;setTimeout(a,140);p.style.opacity=((i<5)?i+2:10-i)/10;})()" />
-          </span>
-      </ul>
-    </div><!--[END] .ex-sidebar-->
 
     <div class="blog">
       <div class="container">
@@ -247,11 +230,29 @@
       <div class="pagination">{{pagination}}</div>
       <hr class="soften" />
     </div><!-- [END] .blog -->
-  
+    
+    <!-- .ex-sidebar -->
+    <div class="ex-sidebar {{#is_index}}index{{/is_index}}">
+      <ul class="ex-sidebar-content">
+          <span class="websymbols icon loader" id="recently1">
+            <img src="http://s3.iaarchiver.net/style/img/dummy.gif" style="display:none" onload="var p=this.parentNode,i=0;p.insertBefore(document.createTextNode(),this);(function a(){p.childNodes[1].nodeValue=i=i>=7?0:i+1;setTimeout(a,100);p.style.opacity=((i<5)?i+2:10-i)/10;})()" />
+          </span>
+          <span class="websymbols icon loader" id="recently2">
+            <img src="http://s3.iaarchiver.net/style/img/dummy.gif" style="display:none" onload="var p=this.parentNode,i=0;p.insertBefore(document.createTextNode(),this);(function a(){p.childNodes[1].nodeValue=i=i>=7?0:i+1;setTimeout(a,120);p.style.opacity=((i<5)?i+2:10-i)/10;})()" />
+          </span>
+          <span class="websymbols icon loader" id="recently3">
+            <img src="http://s3.iaarchiver.net/style/img/dummy.gif" style="display:none" onload="var p=this.parentNode,i=0;p.insertBefore(document.createTextNode(),this);(function a(){p.childNodes[1].nodeValue=i=i>=7?0:i+1;setTimeout(a,160);p.style.opacity=((i<5)?i+2:10-i)/10;})()" />
+          </span>
+          <span class="websymbols icon loader" id="recently4">
+            <img src="http://s3.iaarchiver.net/style/img/dummy.gif" style="display:none" onload="var p=this.parentNode,i=0;p.insertBefore(document.createTextNode(),this);(function a(){p.childNodes[1].nodeValue=i=i>=7?0:i+1;setTimeout(a,140);p.style.opacity=((i<5)?i+2:10-i)/10;})()" />
+          </span>
+      </ul>
+    </div><!--[END] .ex-sidebar-->
+    
     <!-- .footer -->
     <div class="footer" id="foot">
       <span id="recentPosts" class="websymbols icon loader">
-        <img src="http://iaarchiver-storage.appspot.com/style/img/dummy.gif" style="display:none" onload="var p=this.parentNode,i=0;p.insertBefore(document.createTextNode(),this);(function a(){p.childNodes[1].nodeValue=i=i>=7?0:i+1;setTimeout(a,100);})()" />
+        <img src="http://s3.iaarchiver.net/style/img/dummy.gif" style="display:none" onload="var p=this.parentNode,i=0;p.insertBefore(document.createTextNode(),this);(function a(){p.childNodes[1].nodeValue=i=i>=7?0:i+1;setTimeout(a,100);})()" />
       </span>
       <ul class="menu">
         <li class="blog-title"><a href="{{home_link}}">{{author}}</a></li>
@@ -319,41 +320,10 @@
   
   <div id="fb-root"></div>
   
-  <!-- devmode config -->
-  <script type="text/javascript">
-    var devmode = /devmode/.test(window.location.search),
-        devBase = 'https://dl.dropboxusercontent.com/u/12937702/scriptogram/',
-        baseUrl = 'http://iaarchiver-storage.appspot.com/';
-    
-    if (devmode){
-      // change css.href
-      var modCss = document.getElementsByClassName('modifiable-css');
-      for (var i=0; i < modCss.length; i++){
-        var url = modCss[i].href;
-        modCss[i].href = url.replace(baseUrl,devBase);
-      }
-    }
-  </script>
-  
   <!-- Load base js -->
   <script src="http://www.google.com/jsapi"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-
-  <script type="text/javascript">
-    var scripts = new Array(
-      'app',
-      'hackForScriptogram',
-      'cluster.min',
-      'google/prettify.min',
-      'bootstrap/bootstrap-scrollspy.min',
-      'scrollable.min',
-      'mousewheel.min',
-      'feeder'
-    );
-    for (var i in scripts) {
-      // change baseurl if devmode
-      var src = ((devmode)? devBase: baseUrl) +'scripts/'+ scripts[i] + '.js';
-      document.write('<script type="text/javascript" src="' +src +'"><\/script>');
-    }
-  </script>
+  <script type="text/javascript" src="http://s3.iaarchiver.net/scripts/all.min.js"></script>
   <!-- [END] Load base js -->
+
+  </body></html>          

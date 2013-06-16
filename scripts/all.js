@@ -130,7 +130,7 @@ $(document).ready(function(){
 
 function refresh(){
 	$('[data-spy="scroll"]').scrollspy('refresh');
-	$('.ex-sidebar').scrollable();
+	$('.ex-sidebar').scrollable('refresh');
 }
 
 $(window).resize(function() {
@@ -2596,6 +2596,7 @@ $.feeder = new $.Feeder(window, {}, function(){
 }));
 
 (function($){
+
     $.fn.scrollable = function(options){
         var options =  $.extend({}, $.fn.scrollable.defaults, options),
             speed = options.speed;
@@ -2621,9 +2622,15 @@ $.feeder = new $.Feeder(window, {}, function(){
                 innerH = container.innerHeight(), // actual size
                 bar_h = h*h/innerH; // scrollbar size
 
+            target // refresh
+                .unbind('mouseenter')
+                .unbind('mousewheel');
+
+            (h >= innerH)
+                && container.css('marginTop', 0);
+
             (h < innerH) // make scrollable if overflow
                 && target
-                    .unbind('mousewheel')
                     .bind('mousewheel', function(event, delta) {
 
                         var pos = parseInt(container.css('marginTop')),
@@ -2651,6 +2658,7 @@ $.feeder = new $.Feeder(window, {}, function(){
                             function(){ target.find('.scrollbar').fadeOut();})
                     // show scrollbar when loaded
                     .find('.scrollbar').css('height',bar_h).fadeIn().delay(1000).fadeOut();
+
         });
 
         return this;

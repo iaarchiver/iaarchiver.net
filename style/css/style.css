@@ -1,7 +1,5 @@
 @import "../zocial/zocial.css";
 
-@import url(http://fonts.googleapis.com/css?family=Glegoo);
-
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
 @charset "UTF-8";
 .webkit,
@@ -1496,6 +1494,7 @@ iframe.frame {
   background: radial-gradient(center bottom, circle 100, #ffffff, rgba(255, 255, 255, 0));
   height: 250px;
   position: relative;
+  left: 70px;
 }
 #eyecatch .eyecatch-content #to_cluster {
   position: absolute;
@@ -1505,29 +1504,9 @@ iframe.frame {
   top: 0;
   left: 0;
   display: block;
-  font-family: 'Glegoo';
+  font-family: 'Open Sans';
   font-size: 115px;
-  font-weight: normal;
-}
-#eyecatch .eyecatch-content #to_cluster .btn {
-  z-index: 9;
-  text-indent: 0;
-  color: #ccc;
-  text-shadow: 0 0 1px #ddd;
-  margin-left: -50px;
-  font-size: 25px;
-  line-height: 50px;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 30;
-  height: 50;
-  margin-left: -15;
-  margin-top: -25;
-}
-#eyecatch .eyecatch-content #to_cluster .btn:hover {
-  color: #fe57a1;
+  font-weight: 300;
 }
 #eyecatch .eyecatch-content .clustered svg {
   position: absolute;
