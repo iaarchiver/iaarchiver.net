@@ -1,3 +1,7 @@
+var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;
+var mountFolder = function (connect, dir) {
+    return connect.static(require('path').resolve(dir));
+};
 
 module.exports = function(grunt) {
 
@@ -30,17 +34,24 @@ module.exports = function(grunt) {
 				dest: '../scripts/all.min.js'
 			}
 		},
-		connect: {
-			server: {
-				options:{
-					port: 9000,
-					base: 'html',
-					middleware: function(connect,options){
-						
-					}
-				}
-			}
+		replace: {
+
 		},
+		connect: {
+			options :{
+				port: 9000,
+				base: '..',
+				middleware: function (connect, options) {
+				    return [
+				        rewriteRulesSnippet, // RewriteRules support
+				        connect.static(require('path').resolve(options.base)) // mount filesystem
+				    ];
+				}
+			},
+	        rules: {
+	            '/': '.grunt/html/'
+	        }
+ 		},
 		watch: {
 			options: {
 				livereload: true,
@@ -65,5 +76,5 @@ module.exports = function(grunt) {
 	}
 
 	// set default tasks
-	grunt.registerTask('default',['less', 'concat', 'uglify', 'connect', 'watch']);
+	grunt.registerTask('default',['less', 'concat', 'uglify','configureRewriteRules', 'connect', 'watch']);
 };
