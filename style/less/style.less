@@ -19,7 +19,7 @@
 /** fonts **/
 @import "websymbols";
 @import url(http://fonts.googleapis.com/css?family=Glegoo);
-
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
 /////////////////////////////////// STYLE //
 
@@ -32,7 +32,7 @@ body {
 	font: 14px/1.4 @f_base;
 
 	.wrapper{
-		//background: url("../img/scriptogram_img.png") 608px 300px fixed no-repeat;
+		background: url("../img/scriptogram_img.png") 608px 300px fixed no-repeat;
 		max-width: @w_full;
 		padding: 0; margin: 0;
 		.header{
@@ -166,7 +166,7 @@ iframe.frame{
 	.ul_floatList();
 
 	font-family: @f_base;
-	font-size: 12px;
+	font-size: 13px;
 	line-height: 1.9em;
 	padding-top: 3px;
 	
@@ -194,7 +194,8 @@ iframe.frame{
 	max-width: @w_portrait - 50px;
 	.blog-title{
 		text-align:center;
-		font-size: 12px;
+		font-size: .9em;
+		font-weight: 300;
 		line-height: 30px;
 		color: #aaa;
 		margin-bottom: 50px;
@@ -384,6 +385,7 @@ iframe.frame{
 			}
 
 			width: 153px;
+			font-size: .9em;
 			img {
 				display: block;
 				margin: 10px auto;
@@ -394,7 +396,7 @@ iframe.frame{
 				}
 			span { color: @gray;}
 			.column-title{
-				font-size: 10px;
+				font-size: 11px;
 				margin-bottom: 10px;
 				display: block;
 			}
@@ -429,6 +431,7 @@ iframe.frame{
 
 		li a{
 			width:264px;
+			font-size: 1em;
 			.column-title{
 				font-size: 1em;
 			}
@@ -547,7 +550,7 @@ iframe.frame{
 }	
 }
 .body-post, .body-page{
-	font: 13.5px/1.35 @f_serif;
+	font: 13.5px/1.35 @f_sanss;
 	line-height: 1.85em;
 	p {
 		margin:0 0 1.5em;
@@ -616,70 +619,3 @@ iframe.frame{
 		line-height: 1.5em;
 	}
 }//-[END:.copyright]
-
-
-#sync{
-  display:none;
-  position: fixed;
-  left: 20px; bottom: 35px;
-  
-  font-size: 22px;
-  cursor: pointer;
-
-  &:hover{
-  	color: @c_symb;
-  }
-}
-
-.log{
-	.clearfix;
-	margin: 30px 0 0;
-	.item{
-		.panel();
-		list-style: none;
-		width: 213px;
-		float: left;
-		display: block;
-		line-height: 1.5em;
-
-		span{
-			display:block;
-		}
-		img{
-			margin: 2px 4px;
-		}
-		img.byAmazon {
-			display: block;
-			margin: 10px auto;
-			max-width: 90%;
-			height: auto;
-			border: 8px solid @white;
-		.border-radius(3px);
-		}
-		&.tumblr{
-			padding-top: 20px;
-			.date{
-				margin-top: 15px;
-				display:block !important;
-			}
-		}
-		&:hover,&.hover{
-			background: rgba(64,64,64,0.15);
-		}
-		&.highlight{
-			background: rgba(64,64,64,0.15);
-		}
-	}
-	.ja{
-		font-size: 13px;
-		line-height: 1.95em !important;			
-	}
-}
-@media screen and (min-width: @w_portrait_em) {
-.log{
-	margin-left: 50px;
-}}
-
-.notify{
-	.panel();
-}

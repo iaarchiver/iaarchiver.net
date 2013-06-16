@@ -1,6 +1,8 @@
 @import "../zocial/zocial.css";
 
 @import url(http://fonts.googleapis.com/css?family=Glegoo);
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
 @charset "UTF-8";
 .webkit,
 .firefox {
@@ -950,7 +952,7 @@ hr.transparent {
 #disqus {
   max-width: 500px;
   background: url("../img/deli.png") bottom center no-repeat;
-  font-family: 'Glegoo', "Hiragino Kaku Gothic Pro W6", "ヒラギノ角ゴ Pro W6", "Meiryo", "メイリオ", Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", "Meiryo", "メイリオ", Verdana, Arial, Helvetica, sans-serif;
   margin: 55px 0 30px;
   padding: 30px 0 25px;
   text-align: center;
@@ -1239,9 +1241,10 @@ body {
   margin: 0;
   padding: 0;
   color: #444444;
-  font: 14px/1.4 'Glegoo', Helvetica, Arial, sans-serif;
+  font: 14px/1.4 'Open Sans', Helvetica, Arial, sans-serif;
 }
 body .wrapper {
+  background: url("../img/scriptogram_img.png") 608px 300px fixed no-repeat;
   max-width: 1304px;
   padding: 0;
   margin: 0;
@@ -1401,8 +1404,8 @@ iframe.frame {
   zoom: 1;
   margin: 0 !important;
   padding: 0 !important;
-  font-family: 'Glegoo', Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 13px;
   line-height: 1.9em;
   padding-top: 3px;
 }
@@ -1480,7 +1483,8 @@ iframe.frame {
 }
 #eyecatch .blog-title {
   text-align: center;
-  font-size: 12px;
+  font-size: .9em;
+  font-weight: 300;
   line-height: 30px;
   color: #aaa;
   margin-bottom: 50px;
@@ -1559,7 +1563,7 @@ iframe.frame {
   zoom: 1;
   margin: 0 !important;
   padding: 0 !important;
-  font-family: 'Glegoo', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 1.45em;
 }
@@ -1736,8 +1740,8 @@ iframe.frame {
   zoom: 1;
   margin: 0 !important;
   padding: 0 !important;
-  font-family: 'Glegoo', Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 13px;
   line-height: 1.9em;
   padding-top: 3px;
   margin-right: 5px;
@@ -1807,6 +1811,7 @@ iframe.frame {
   background: none;
   border-color: transparent;
   width: 153px;
+  font-size: .9em;
 }
 .ex-sidebar .ex-sidebar-content li a:hover {
   -webkit-border-radius: 3px;
@@ -1834,7 +1839,7 @@ iframe.frame {
   color: #aaaaaa;
 }
 .ex-sidebar .ex-sidebar-content li a .column-title {
-  font-size: 10px;
+  font-size: 11px;
   margin-bottom: 10px;
   display: block;
 }
@@ -1876,6 +1881,7 @@ iframe.frame {
   }
   .ex-sidebar .ex-sidebar-content li a {
     width: 264px;
+    font-size: 1em;
   }
   .ex-sidebar .ex-sidebar-content li a .column-title {
     font-size: 1em;
@@ -2135,7 +2141,7 @@ iframe.frame {
 }
 .body-post,
 .body-page {
-  font: 13.5px/1.35 Georgia, 'Hiragino Mincho Pro', Helvetica, Arial, sans-serif;
+  font: 13.5px/1.35 'Open Sans', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", "Meiryo", "メイリオ", Verdana, Arial, Helvetica, sans-serif;
   line-height: 1.85em;
 }
 .body-post p,
@@ -2191,104 +2197,11 @@ iframe.frame {
   }
 }
 .copyright {
-  font: 10px/1 'Glegoo', "Hiragino Kaku Gothic Pro W6", "ヒラギノ角ゴ Pro W6", "Meiryo", "メイリオ", Verdana, Arial, Helvetica, sans-serif;
+  font: 10px/1 'Open Sans', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", "Meiryo", "メイリオ", Verdana, Arial, Helvetica, sans-serif;
   text-align: right;
   margin: 20px 15px 0;
 }
 .copyright span {
   display: block;
   line-height: 1.5em;
-}
-#sync {
-  display: none;
-  position: fixed;
-  left: 20px;
-  bottom: 35px;
-  font-size: 22px;
-  cursor: pointer;
-}
-#sync:hover {
-  color: #fe57a1;
-}
-.log {
-  zoom: 1;
-  margin: 30px 0 0;
-}
-.log:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-.log:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-.log .item {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  color: #555;
-  background-color: #f0f0f0;
-  background-color: rgba(0, 0, 0, 0.05);
-  border: 1px solid #f2f2f2;
-  border: 1px solid rgba(128, 128, 128, 0.1);
-  margin: 0 1px 1px 0;
-  padding: 1px 12px;
-  list-style: none;
-  width: 213px;
-  float: left;
-  display: block;
-  line-height: 1.5em;
-}
-.log .item span {
-  display: block;
-}
-.log .item img {
-  margin: 2px 4px;
-}
-.log .item img.byAmazon {
-  display: block;
-  margin: 10px auto;
-  max-width: 90%;
-  height: auto;
-  border: 8px solid #f9f9f9;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-.log .item.tumblr {
-  padding-top: 20px;
-}
-.log .item.tumblr .date {
-  margin-top: 15px;
-  display: block !important;
-}
-.log .item:hover,
-.log .item.hover {
-  background: rgba(64, 64, 64, 0.15);
-}
-.log .item.highlight {
-  background: rgba(64, 64, 64, 0.15);
-}
-.log .ja {
-  font-size: 13px;
-  line-height: 1.95em !important;
-}
-@media screen and (min-width: 52em) {
-  .log {
-    margin-left: 50px;
-  }
-}
-.notify {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  color: #555;
-  background-color: #f0f0f0;
-  background-color: rgba(0, 0, 0, 0.05);
-  border: 1px solid #f2f2f2;
-  border: 1px solid rgba(128, 128, 128, 0.1);
-  margin: 0 1px 1px 0;
-  padding: 1px 12px;
 }
