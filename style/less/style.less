@@ -6,7 +6,6 @@
 @import "assets/reset";
 @import "assets/lib";
 
-
 @import "var";
 
 @import "googlePp"; // google code prettify
@@ -18,6 +17,7 @@
 
 /** fonts **/
 @import "websymbols";
+@import "websymbolsliga";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
 /////////////////////////////////// STYLE //
@@ -54,7 +54,8 @@ a {
 		color: @c_link;
 	}
 	&:link:hover, &:active:hover, &:visited:hover {
-		text-decoration: underline;
+		//text-decoration: underline;
+		border-bottom: 1px solid @c_link;
 	}
 	&:link:hover, &:active:hover {
 		color: @c_link;
@@ -104,6 +105,7 @@ dt{	font-weight: bold;}
 .body-post > blockquote{
 	margin-bottom: 30px;
 	margin-right: 14px;
+	border-right: 1px solid #ccc;
 }
 strong, b {
 	font-family: helvetica, sans-serif;
@@ -183,49 +185,46 @@ iframe.frame{
 }
 @media screen and (max-width: @w_portrait_em) {
 	.menu li > span{ display:none;}
-	.menu {font-size: 14px;}
-
 }//-[END:.menu]
 
 //-[#eyechatch]
 #eyecatch{
-	margin: 0 50px;
+	margin: 45px 50px 70px;
 	max-width: @w_portrait - 50px;
+	text-align:center;
 	.blog-title{
-		text-align:center;
 		font-size: .9em;
 		font-weight: 300;
-		line-height: 30px;
 		color: #aaa;
-		margin-bottom: 50px;
 	}
 	
 	.eyecatch-content{
-		.spotlight;
-
-		@_height: 250px;
-
-		height: @_height;
-		position: relative;
-		left: 70px;
-
-		#to_cluster {
-			position: absolute;
-			text-indent: -9999px;
-			width: @w_portrait;
-			height: @_height;
-			top: 0; left: 0;
-			display: block;
-			font-family: 'Open Sans';
-			font-size: 115px;
-			font-weight: 300;
+		.spotlight();
+		font-size: 2em;
+		font-weight: 300;
+		margin: 0; padding: 0;
+		#loader-title{
+			padding-top: 120px;
 		}
-		.clustered svg {
-		  position: absolute;
-		  top: 0; left: 0;  
+		#loader-logo{
+		    position: relative;
+		    margin: 1em;
+		    font-size: 10em;
+			font-size: 140px;
+			line-height: 120%;
+		    .loader-logo-f{
+		        position: absolute;
+		        top:0; left: 135px;
+		        z-index: 99;
+		    }
+		    .loader-logo-b{
+		        position: absolute;
+		        top:0; left: 135px;
+		    }
 		}
 	}
-}
+}//-[END:.eyecatch]
+
 //-[.header]
 .header{
 	padding-left: 2px;
@@ -444,7 +443,7 @@ iframe.frame{
 	hr{
 		height: 40px;
 		background: url("../img/deli2x.png") center no-repeat;
-		background-size: 128px;
+		background-size: 104px;
 	}
 	&.archive{
 		margin:0; padding:0;
@@ -490,7 +489,7 @@ iframe.frame{
 	margin-bottom: 15px;
 	a:hover{
 		color: @c_symb !important;
-		text-decoration: none;
+		border-bottom: 1px solid @c_symb;
 	}
 	h3 a {
 		span.websymbols{
@@ -534,6 +533,9 @@ iframe.frame{
 .body-post, .body-page{
 	font: 13.5px/1.35 @f_sanss;
 	line-height: 1.85em;
+	a{
+		border-bottom: 1px dotted #ccc;
+	}
 	p {
 		margin:0 0 1.5em;
 		max-width: 500px;
@@ -557,9 +559,9 @@ iframe.frame{
 	.introduction {
 		display:block;
 		background: url("../img/deli2x.png") bottom center no-repeat;
-		background-size: 128px;
+		background-size: 104px;
 
-		padding-bottom: 3.4em;
+		padding-bottom: 3em;
 		margin: 0 0 2.8em;
 	}
 }
@@ -601,3 +603,5 @@ iframe.frame{
 		line-height: 1.5em;
 	}
 }//-[END:.copyright]
+
+
