@@ -2457,10 +2457,11 @@ $.feeder = new $.Feeder(window, {}, function(){
 })(jQuery)
 
 ;(function(window){
+var target = document.getElementById('loader-logo');
+if (!target) return false; 
 
 var colorArray = ['#00B5B6','#2D358E','#C061A5','#EC5F48','#444','#B66327','#F9A236','#85C440'];
 
-var target = document.getElementById('loader-logo');
 var loader_f = document.createElement('span'),
     loader_b = document.createElement('span');
 
@@ -2482,7 +2483,7 @@ loader_b.appendChild(document.createTextNode(),loader_b);
 })();
 
 target.addEventListener('mouseover',function(){
-	console.log('called');
+	//console.log('called');
 },false);
 
 })(window);

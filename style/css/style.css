@@ -2221,6 +2221,8 @@ iframe.frame {
   }
   .sidebar .sidebar-content ul li#ctrl-down {
     display: block !important;
+    text-align: center;
+    line-height: 2.5em;
   }
   .sidebar .sidebar-content ul li a,
   .sidebar .sidebar-content ul li span {
