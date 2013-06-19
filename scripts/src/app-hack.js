@@ -72,7 +72,7 @@ $(document).ready(function(){
     	$('#sync').css('display','block');
     }
 
-    // Remove &nbsp textNode in .pagination of LastIndexPage
+    // Remove &nbsp textNode in .pagination of First/LastIndexPage
 	$('.pagination ul:contains("First")')
     .contents()
     .filter(function(){
@@ -80,6 +80,16 @@ $(document).ready(function(){
                 && !/\S/.test(this.data) // only whitespace
                 && $.inArray($(this).parent(),$('.pagination ul'))
      }).remove();
+    $('.pagination ul>a:contains("First")').wrap('<li>');
+	$('.pagination ul:contains("Last")')
+    .contents()
+    .filter(function(){
+        return this.nodeType==3
+                && !/\S/.test(this.data) // only whitespace
+                && $.inArray($(this).parent(),$('.pagination ul'))
+     }).remove();
+    $('.pagination ul>a:contains("Last")').wrap('<li>');
+
 
     // Limit .pagination-width
     $('.pagination').each(function() {

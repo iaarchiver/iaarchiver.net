@@ -190,22 +190,22 @@ $.feeder = new $.Feeder(window, {}, function(){
             }),
         $.feeder.get1feed('#recently1',{
             url: 'http://twilog.org/rss-feed/ia_archiver',
-            title: '<span class="column-title websymbols pane twitter">Recently Watched</span>',
+            title: '<span class="column-title websymbolsliga pane twitter">Recently Watched</span>',
             key: '#watched'
         }),
         $.feeder.get1feed('#recently2',{
             url: 'http://b.hatena.ne.jp/ia_archiver/rss',
-            title: '<span class="column-title websymbols pane hatebu">Recent Bookmark</span>',
+            title: '<span class="column-title websymbolsliga pane hatebu">Recent Bookmark</span>',
             key: ''
         }),
         $.feeder.get1feed('#recently3',{
             url: 'http://twilog.org/rss-feed/ia_archiver',
-            title: '<span class="column-title websymbols pane twitter">Recently Read</span>',
+            title: '<span class="column-title websymbolsliga pane twitter">Recently Read</span>',
             key: '#read'
         }),
         $.feeder.get1feed('#recently4',{
             url: 'http://iaarchiver.tumblr.com/rss',
-            title: '<span class="column-title websymbols pane tumblr">Recent Quotes</span>',
+            title: '<span class="column-title websymbolsliga pane tumblr">Recent Quotes</span>',
             key: ''
         })
     )
@@ -213,6 +213,6 @@ $.feeder = new $.Feeder(window, {}, function(){
         refresh();
     })
     .fail(function() {
-        console.log('fail');
+        console.log('fail: jQuery.Feeder');
     });
 });

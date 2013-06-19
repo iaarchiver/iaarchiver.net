@@ -107,7 +107,7 @@ $(document).ready(function(){
     	$('#sync').css('display','block');
     }
 
-    // Remove &nbsp textNode in .pagination of LastIndexPage
+    // Remove &nbsp textNode in .pagination of First/LastIndexPage
 	$('.pagination ul:contains("First")')
     .contents()
     .filter(function(){
@@ -115,6 +115,16 @@ $(document).ready(function(){
                 && !/\S/.test(this.data) // only whitespace
                 && $.inArray($(this).parent(),$('.pagination ul'))
      }).remove();
+    $('.pagination ul>a:contains("First")').wrap('<li>');
+	$('.pagination ul:contains("Last")')
+    .contents()
+    .filter(function(){
+        return this.nodeType==3
+                && !/\S/.test(this.data) // only whitespace
+                && $.inArray($(this).parent(),$('.pagination ul'))
+     }).remove();
+    $('.pagination ul>a:contains("Last")').wrap('<li>');
+
 
     // Limit .pagination-width
     $('.pagination').each(function() {
@@ -2220,22 +2230,22 @@ $.feeder = new $.Feeder(window, {}, function(){
             }),
         $.feeder.get1feed('#recently1',{
             url: 'http://twilog.org/rss-feed/ia_archiver',
-            title: '<span class="column-title websymbols pane twitter">Recently Watched</span>',
+            title: '<span class="column-title websymbolsliga pane twitter">Recently Watched</span>',
             key: '#watched'
         }),
         $.feeder.get1feed('#recently2',{
             url: 'http://b.hatena.ne.jp/ia_archiver/rss',
-            title: '<span class="column-title websymbols pane hatebu">Recent Bookmark</span>',
+            title: '<span class="column-title websymbolsliga pane hatebu">Recent Bookmark</span>',
             key: ''
         }),
         $.feeder.get1feed('#recently3',{
             url: 'http://twilog.org/rss-feed/ia_archiver',
-            title: '<span class="column-title websymbols pane twitter">Recently Read</span>',
+            title: '<span class="column-title websymbolsliga pane twitter">Recently Read</span>',
             key: '#read'
         }),
         $.feeder.get1feed('#recently4',{
             url: 'http://iaarchiver.tumblr.com/rss',
-            title: '<span class="column-title websymbols pane tumblr">Recent Quotes</span>',
+            title: '<span class="column-title websymbolsliga pane tumblr">Recent Quotes</span>',
             key: ''
         })
     )
@@ -2243,10 +2253,9 @@ $.feeder = new $.Feeder(window, {}, function(){
         refresh();
     })
     .fail(function() {
-        console.log('fail');
+        console.log('fail: jQuery.Feeder');
     });
 });
-
 /*! Copyright (c) 2013 Brandon Aaron (http://brandonaaron.net)
  * Licensed under the MIT License (LICENSE.txt).
  *

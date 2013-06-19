@@ -359,12 +359,12 @@ table {
    These override the primary ('mobile first') styles
    Modify as content requires.
    ========================================================================== */
-.sidebar,.ex-sidebar,#eyecatch{ display:none;}
+.sidebar,.ex-sidebar{ display:none;}
 @media only screen and (min-width: 480px) {
 }
 @media only screen and (min-width: 768px) {
   /* Style adjustments for viewports 768px and over go here */
-.sidebar,.ex-sidebar,#eyecatch{ display:block;}
+.sidebar,.ex-sidebar{ display:block;}
 }
 /* =============================================================================
    Print styles.
@@ -542,57 +542,3 @@ h6 {
 .body-post > h3, .body-page > h3 { font-weight: bold; margin: 20px 0 10px; font-size: 16px }
 .body-post > h4, .body-page > h4 { font-weight: bold; margin: 20px 0 10px; font-size: 14px }
 */
-
-.pagination {
-  height: 36px;
-  margin: 18px 0;
-  clear: both;
-}
-.pagination ul {
-  float: right;
-  background: rgba(250,250,250,0.6);
-  margin: 0;
-  border: 0px solid #ddd;
-  border: 0px solid rgba(0, 0, 0, 0.15);
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, .05);
-  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, .05);
-  box-shadow: 0 0 2px rgba(0, 0, 0, .05);
-}
-.pagination li {
-  display: inline;
-  height: 36px;
-}
-.pagination a {
-  float: left;
-  padding: 0 10px;
-  line-height: 36px;
-  text-decoration: none;
-}
-.pagination a:hover {
-  background-color: #f1f1f1;
-}
-.pagination .active a {
-  color: black;
-}
-.pagination .disabled a,
-.pagination .disabled a:hover {
-  background-color: transparent;
-  color: #bfbfbf;
-}
-.pagination a{
-  border-right: 1px solid #ddd;
-}
-.pagination li:last-child a,
-.pagination ul>a:last-child{
-  border-right:none;
-}
-.pgn{
-  color: #5691CD;
-  cursor:pointer;
-  a {
-    border-right:1px solid #ddd!important;
-  }
-}
