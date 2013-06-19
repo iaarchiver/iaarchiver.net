@@ -2681,6 +2681,7 @@ iframe.frame {
 .body-page {
   font: 13.5px/1.35 'Open Sans', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", "Meiryo", "メイリオ", Verdana, Arial, Helvetica, sans-serif;
   line-height: 1.85em;
+  text-rendering: optimizeLegibility;
 }
 .body-post a,
 .body-page a {

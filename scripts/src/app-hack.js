@@ -67,7 +67,7 @@ $(document).ready(function(){
 	        }
 	    });
 	});
-//<a href="http://scriptogr.am/admin/settings"><span style="position: fixed; top: 35px; right: 35px"><img src="http://scriptogr.am/lib/img/admin.png" /></span></a>
+	//<a href="http://scriptogr.am/admin/settings"><span style="position: fixed; top: 35px; right: 35px"><img src="http://scriptogr.am/lib/img/admin.png" /></span></a>
 	if (location.hostname == 'scriptogr.am' && $('a>span>img[src="http://scriptogr.am/lib/img/admin.png"]').size() != 0){
     	$('#sync').css('display','block');
     }
@@ -123,3 +123,44 @@ $(document).ready(function(){
         $(this).show();
 	})
 });
+
+// Add my frame class
+/* Usage:
+<div class="frame youtube" title="[title]" data-src="[embed URL like `http://www.youtube.com/embed/3cdkYdzgXLc`]">
+<p>[title]</p></div>
+*/
+
+$(function(){
+	$('div.frame.youtube').each(function(){
+    	var dataSrc = $(this).attr('data-src');
+    	//$(this).css({background:'rgba(64,64,64,0.75) url("'+ getImgFromYoutube(dataSrc) + '") center center no-repeat !important'});
+        $('<div class="thumb">')
+        .css({background:'rgba(64,64,64,0.75) url("'+ getImgFromYoutube(dataSrc) + '") center center no-repeat'})
+            .prependTo(this);
+	});
+    $('div.frame').click(function() {
+        var dataSrc = $(this).attr('data-src');
+        if (isiOS || isAndroid) {
+            window.open(dataSrc);
+        } else {
+            $(this).replaceWith('<iframe class="frame" src="' + dataSrc + '" frameborder="0" allowfullscreen></iframe>');
+        }
+    });
+});
+
+function getImgFromYoutube(url, isThumbnail) {
+    isThumbnail = (/small|s|true/i).test(isThumbnail) ? true : false;
+    var videoID = url.match("embed/([^&#]*)")[1];
+    if (videoID != null) {
+        return 'http://img.youtube.com/vi/' + videoID + '/' + (isThumbnail ? '2' : '0') + '.jpg';
+    }
+}
+
+function innerPageLinkGen (targetlist,anchorlist){
+	targetlist.each(function(i){
+		$(this).attr('id','post'+i);
+	});
+	anchorlist.each(function(i){
+		$(this).attr('href',location.href+'#post'+i);        
+	});
+}
