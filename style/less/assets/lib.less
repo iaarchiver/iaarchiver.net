@@ -96,6 +96,7 @@ hr.transparent{
 		list-style: none;
 		&>a, &>span{
 			.panel;
+			.box-sizing(border-box);
 			float: left;
 			display: block;
 		}
@@ -132,9 +133,9 @@ hr.transparent{
 }
 .panel_inactive{
 	.panel;
-	color: #eee;
+	color: #f7f7f7;
 	background: rgba(86,145,205,.8); // <-@c_symb
-	border: 1px solid rgba(255,255,255,.1);
+	border: 1px solid rgba(128,128,128,.15);
 }
 
 /* markdown layout theme */

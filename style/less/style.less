@@ -168,7 +168,7 @@ iframe.frame{
 	font-family: @f_base;
 	font-size: 13px;
 	line-height: 1.9em;
-	padding-top: 3px;
+	padding-top: 2px;
 	
 	.blog-title a{
 		padding-left: 35px;
@@ -183,20 +183,20 @@ iframe.frame{
 	}
 }
 @media screen and (max-width: @w_portrait_em) {
-	.menu li > span{ display:none;}
+	//.menu li > span{ display:none;}
 }//-[END:.menu]
 
 // [.pagination]
 .pagination {
 	height: 36px;
-	margin: 18px 0;
 	clear: both;
 
 	ul {
-		float: right;
+		.clearfix;
+		overflow:hidden;
 		background: rgba(250,250,250,0.6);
-		margin: 0;
-		border: 1px solid rgba(128, 128, 128, 0.15);
+		margin: 0; padding: 0;
+		border: 1px solid rgba(128, 128, 128, 0.1);
 		.border-radius(3px);
 		.box-shadow(0 0 2px rgba(0, 0, 0, .05));
 
@@ -212,6 +212,7 @@ iframe.frame{
 				border-right: 1px solid #ddd;
 				&:hover{
 					background-color: #f1f1f1;
+					border-bottom: none;
 				}
 			}
 			&.active a {
@@ -221,7 +222,7 @@ iframe.frame{
 			&.disabled a,
 			&.disabled a:hover {
 				background-color: transparent;
-				color: #bfbfbf;
+				color: #ddd;
 			}
 			&:last-child a{
 				border-right: none;
@@ -295,14 +296,17 @@ iframe.frame{
 	position: relative;
 	bottom: auto; left: auto;
 	max-width: @w_portrait - 50px;
+	margin-top: 45px;
 
+	.pagination{
+		text-align: center;
+		ul{ display: inline-block;}
+		margin-bottom: 45px;
+	}
 	.sidebar-content ul{
 		.ul_floatList();
-
-		font-family: @f_base;
-		font-size: 12px;
-		line-height: 1.45em;
-
+		font-size: 13px;
+		line-height: 1.9em;
 		li{
 			&.ctrl{ display:none;}
 			&>a{
@@ -311,8 +315,8 @@ iframe.frame{
 				&:hover{ color: @white;}
 				span{
 					color: @gray !important;
-					display: block;
-					padding: 0;
+					font-size: .9em;
+					padding-left: 8px;
 				}
 				span.scounter{
 					.circle(1em);
@@ -322,9 +326,6 @@ iframe.frame{
 					background-color: rgba(256,256,256,0.6);
 					.opacity(0);
 				}
-			}
-			&>span{
-				padding: 4px 12px 2px;
 			}
 			&>span.websymbols{
 				margin: 0 1px 1px 0 !important;
@@ -357,31 +358,42 @@ iframe.frame{
 		}
 	}
 }
+@media screen and (max-width: @w_mobile_em){
+.sidebar .sidebar-content{
+	padding: 0 4px;
+	ul li a{
+		width: 100%;
+	}
+}}
 @media screen and (min-width: @w_portrait_em) {
 .sidebar{
 	padding: 0 0 0 50px;
-}
-}
+}}
 @media screen and (min-width: @w_landscape_em) {
 .sidebar{
 	position: fixed;
 	bottom: 15px; left: 798px;
 	width: 205px;
-	margin:0; padding-left: 2px;
+	margin: 0; padding-left: 2px;
 	.pagination{
-		//margin:0; padding:0;
+		float:right;
+		margin: 1.9em 0;
 		a{ padding: 0 6px;}
-		a:hover{ border-bottom:none;}
 	}
 	.sidebar-content ul li{
+		font-size: 12px;
+		line-height: 1.45em;
 		&#ctrl-down{
 			display:block !important;
-			text-align: center;
-			line-height: 2.5em;
+			a{
+				text-align: center;
+				line-height: 2.5em;
+				margin: 0; padding: 0;
+			}
 		}
-	
 		a,span{
-			width: 180px;
+			display: block;
+			width: 205px;
 		}
 		&.active a{
 			color: @lightgray;
@@ -424,7 +436,7 @@ iframe.frame{
 				.panel();
 			}
 
-			width: 153px;
+			width: 180px;
 			font-size: .9em;
 			img {
 				display: block;
@@ -484,8 +496,17 @@ iframe.frame{
 //-[.blog]
 .blog{
 	.spotlight;
+	margin-bottom: 80px;
 	.pagination{
-		//margin-bottom: -2px;
+		margin: 120px auto 0;
+		text-align: center;
+		ul{
+			display: inline-block;
+			width: auto;
+		}
+		a:hover{
+			border-bottom: none;
+		}
 	}
 }//-[END:.blog]
 
@@ -633,9 +654,9 @@ iframe.frame{
 .footer{
 	margin-top: 25px;
 	margin-left: 50px;
-	padding:0 0 15px 2px;
+	padding:0 0 15px 4px;
 	.menu{
-	max-width: @w_portrait - 52px;
+		max-width: @w_portrait - 52px;
 		padding: 0 0 25px;
 		li a{
 			float: right;
@@ -649,9 +670,9 @@ iframe.frame{
 }
 @media screen and (max-width: @w_mobile_em){
 	.footer{
-		margin-left: 2px;
+		margin-left:0;
 		.generated_from_feeds li a{
-			width: 92%;
+			width: 100%;
 		}
 	}
 }//-[END:.footer]
