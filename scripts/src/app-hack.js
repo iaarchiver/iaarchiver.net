@@ -171,6 +171,6 @@ function innerPageLinkGen (targetlist,anchorlist){
 		$(this).attr('id','post'+i);
 	});
 	anchorlist.each(function(i){
-		$(this).attr('href',location.href+'#post'+i);        
+		$(this).attr('href','#post'+i);        
 	});
 }

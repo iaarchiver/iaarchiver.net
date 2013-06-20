@@ -66,7 +66,7 @@
     <div class="header">
       <ul class="menu">
         <li class="blog-title"><a href="{{base_url}}">{{author}}</a></li>
-        <li><span>my lifelong archives+</span></li>
+        <li><span id="indicator" class="websymbolsliga icon"></span></li>
         {{#pages}} 
         <li><a href="{{permalink}}">{{title}}</a></li>
         {{/pages}}
@@ -89,18 +89,15 @@
           {{/archive_divider}}
           {{/is_archive}}
           {{#is_post}}
-          <li><span>SOCIAL BUTTONS</span></li>
-          <li><a id="tumblr" class="websymbols pane tumblr" href="#" onclick="window.open('http://www.tumblr.com/share/link?url='+escape('{{permalink}}')+'&name={{title}}',null,'width=450,height=430');">Share on Tumblr</a></li>
-          <li><a id="twitter" class="websymbols pane twitter" href="https://twitter.com/share?url={{permalink}}" target="_blank">Tweets:<span class="scounter"></span></a></li>
-          <li><a id="facebook" class="websymbols pane facebook" href="#" target="_blank">Facebook:<span class="scounter"></span></a></li>
-          <li><a id="hatebu" class="websymbols pane hatebu" href="http://b.hatena.ne.jp/add?mode=confirm&url={{permalink}}&title={{title}}" target="_blank">hatebu:<span class="scounter"></span></a></li>
+          <li><span class="websymbolsliga pane share">SOCIAL BUTTONS</span></li>
+          <li class="social"><a id="tumblr" class="websymbolsliga pane tumblr" href="#" onclick="window.open('http://www.tumblr.com/share/link?url='+escape('{{permalink}}')+'&name={{title}}',null,'width=450,height=430');">Share on Tumblr</a></li>
+          <li class="social"><a id="twitter" class="websymbolsliga pane twitter" href="https://twitter.com/share?url={{permalink}}" target="_blank">Tweets:<span class="scounter"></span></a></li>
+          <li class="social"><a id="facebook" class="websymbolsliga pane facebook" href="#" target="_blank">Facebook:<span class="scounter"></span></a></li>
+          <li class="social"><a id="hatebu" class="websymbolsliga pane hatebu" href="http://b.hatena.ne.jp/add?mode=confirm&url={{permalink}}&title={{title}}" target="_blank">Hatebu:<span class="scounter"></span></a></li>
   
           {{#if_tags}}
           <span id="related" data-tags="{{#tags}}{{name}} {{/tags}}"></span>
           <span id="linkback"></span>
-          <script type="text/javascript">
-  
-          </script>
           {{/if_tags}}
             {{/is_post}}
           {{/posts}}
@@ -235,26 +232,16 @@
     <!-- .ex-sidebar -->
     <div class="ex-sidebar {{#is_index}}index{{/is_index}}">
       <ul class="ex-sidebar-content">
-          <span class="websymbols icon loader" id="recently1">
-            <img src="http://s3.iaarchiver.net/style/img/dummy.gif" style="display:none" onload="var p=this.parentNode,i=0;p.insertBefore(document.createTextNode(),this);(function a(){p.childNodes[1].nodeValue=i=i>=7?0:i+1;setTimeout(a,100);p.style.opacity=((i<5)?i+2:10-i)/10;})()" />
-          </span>
-          <span class="websymbols icon loader" id="recently2">
-            <img src="http://s3.iaarchiver.net/style/img/dummy.gif" style="display:none" onload="var p=this.parentNode,i=0;p.insertBefore(document.createTextNode(),this);(function a(){p.childNodes[1].nodeValue=i=i>=7?0:i+1;setTimeout(a,120);p.style.opacity=((i<5)?i+2:10-i)/10;})()" />
-          </span>
-          <span class="websymbols icon loader" id="recently3">
-            <img src="http://s3.iaarchiver.net/style/img/dummy.gif" style="display:none" onload="var p=this.parentNode,i=0;p.insertBefore(document.createTextNode(),this);(function a(){p.childNodes[1].nodeValue=i=i>=7?0:i+1;setTimeout(a,160);p.style.opacity=((i<5)?i+2:10-i)/10;})()" />
-          </span>
-          <span class="websymbols icon loader" id="recently4">
-            <img src="http://s3.iaarchiver.net/style/img/dummy.gif" style="display:none" onload="var p=this.parentNode,i=0;p.insertBefore(document.createTextNode(),this);(function a(){p.childNodes[1].nodeValue=i=i>=7?0:i+1;setTimeout(a,140);p.style.opacity=((i<5)?i+2:10-i)/10;})()" />
-          </span>
+          <span class="websymbolsliga icon loader" id="recently1"></span>
+          <span class="websymbolsliga icon loader" id="recently2"></span>
+          <span class="websymbolsliga icon loader" id="recently3"></span>
+          <span class="websymbolsliga icon loader" id="recently4"></span>
       </ul>
     </div><!--[END] .ex-sidebar-->
     
     <!-- .footer -->
     <div class="footer" id="foot">
-      <span id="recentPosts" class="websymbols icon loader">
-        <img src="http://s3.iaarchiver.net/style/img/dummy.gif" style="display:none" onload="var p=this.parentNode,i=0;p.insertBefore(document.createTextNode(),this);(function a(){p.childNodes[1].nodeValue=i=i>=7?0:i+1;setTimeout(a,100);})()" />
-      </span>
+      <span id="recentPosts" class="websymbolsliga icon loader"></span>
       <ul class="menu">
         <li class="blog-title"><a href="{{home_link}}">{{author}}</a></li>
         <li><a href="{{base_url}}/feed">RSS</a></li>
@@ -327,4 +314,4 @@
   <script type="text/javascript" src="http://s3.iaarchiver.net/scripts/all.min.js"></script>
   <!-- [END] Load base js -->
 
-  </body></html>                              
+  </body></html>                                        

@@ -22,12 +22,10 @@ $(window).resize(function() {
 $(window).keydown(function(e){
 	if (e.which == 37){
 		var anchor = $('#up').attr('href');
-		//$('body,html').animate({scrollTop:$(anchor).position().top+5},200);
 		$('body,html').scrollTop($(anchor).position().top+5);
 		location.hash = anchor;
 	}else if (e.which == 39){
 		var anchor = $('#down').attr('href');
-		//$('body,html').animate({scrollTop:$(anchor).position().top+5},200);
 		$('body,html').scrollTop($(anchor).position().top+5);
 		location.hash = anchor;
 	}

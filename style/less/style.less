@@ -181,10 +181,29 @@ iframe.frame{
 			color: @white;
 		}
 	}
+	.websymbolsliga{
+		font-size: 13px;
+		line-height: 2em;
+	}
 }
 @media screen and (max-width: @w_portrait_em) {
 	//.menu li > span{ display:none;}
 }//-[END:.menu]
+
+// [#indicator]
+#indicator{
+	height: 28px; width: 38px;
+	.animation(blink .4s 2 linear);
+	.animation-play-state(paused);
+}
+.blink_anime{
+	0% { opacity:1;}
+	50% { opacity:0.3;}
+	100% { opacity:1;}
+}
+@-webkit-keyframes blink { .blink_anime;}
+
+//- [END:#indicator]
 
 // [.pagination]
 .pagination {
@@ -349,12 +368,18 @@ iframe.frame{
 					}
 				}
 			}
+			&.social{
+				line-height: 1.9em;
+			}
 		}
 		#related li a,
 		#linkback li a{
-				height: 17px;
-				padding: 4px 12px 2px;
-				b{ font-weight: normal;}
+			height: 17px;
+			padding: 4px 12px 2px;
+			b{ font-weight: normal;}
+		}
+		#related li{
+			display:none;
 		}
 	}
 }
@@ -395,6 +420,9 @@ iframe.frame{
 			display: block;
 			width: 205px;
 		}
+		.date{
+			padding-left: 0;
+		}
 		&.active a{
 			color: @lightgray;
 			background-color: rgba(64,64,64,0.75);
@@ -406,9 +434,10 @@ iframe.frame{
 		}
 
 	}
-	#related li a,
-	#linkback li a{
-		height:auto !important;
+	#related li,
+	#linkback li{
+		display: block !important;
+		a{ height:auto !important;}
 	}
 }}
 //-[END:.sidebar]
@@ -428,7 +457,7 @@ iframe.frame{
 		margin-right: 5px;
 
 		li a {
-			width: 180px;
+			width: 178px;
 			background: none;
 			border-color: transparent;
 
@@ -436,7 +465,7 @@ iframe.frame{
 				.panel();
 			}
 
-			width: 180px;
+			width: 178px;
 			font-size: .9em;
 			img {
 				display: block;
@@ -656,7 +685,7 @@ iframe.frame{
 	margin-left: 50px;
 	padding:0 0 15px 4px;
 	.menu{
-		max-width: @w_portrait - 52px;
+		max-width: @w_portrait - 56px;
 		padding: 0 0 25px;
 		li a{
 			float: right;
@@ -670,9 +699,10 @@ iframe.frame{
 }
 @media screen and (max-width: @w_mobile_em){
 	.footer{
-		margin-left:0;
-		.generated_from_feeds li a{
-			width: 100%;
+		margin-left:2px; padding: 0;
+		.generated_from_feeds{
+			padding: 0 4px;
+			li a{ width: 100%;}
 		}
 	}
 }//-[END:.footer]

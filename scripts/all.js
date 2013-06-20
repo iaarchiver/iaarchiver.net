@@ -206,9 +206,57 @@ function innerPageLinkGen (targetlist,anchorlist){
 		$(this).attr('id','post'+i);
 	});
 	anchorlist.each(function(i){
-		$(this).attr('href',location.href+'#post'+i);        
+		$(this).attr('href','#post'+i);        
 	});
 }
+;(function(window){
+	function Loader(element, option, callb){
+		this.target = element;
+		this.option = option || {};
+		this.callb = callb;
+
+		this.i = this.option.init || 0;
+		this.interval = this.option.interval ||200;
+		this.to;
+
+		this.init();
+	};
+
+	Loader.prototype = {
+		init: function(){
+			this.target.appendChild(document.createTextNode(this.i),this.target);
+			this.run();
+		},
+		run: function(){
+			this.increment();
+			this.to = setTimeout(function(){this.run()}.bind(this), this.interval);
+		},
+		stop: function(_callb){
+			clearTimeout(this.to);
+			if (this.callb) this.callb();
+			if (_callb) _callb();
+		},
+		increment: function(){
+			this.target.firstChild.nodeValue = this.i=this.i>=7?0:this.i+1;
+		}
+	};
+
+	// document.addEventListener('DOMContentLoaded',function(){...},false)
+
+	var loaders = document.getElementsByClassName('loader');
+	for (var i=0; i<loaders.length; i++){
+		var rand = [3,6,1,4,0,2,7,5];
+		new Loader(loaders[i],{init:rand[i]});
+	}
+	var indicator = document.getElementById('indicator');
+	window.indicator = new Loader(indicator,{},function(){	
+		indicator.innerHTML = '&#245;'; // show done
+		indicator.style.webkitAnimationPlayState = 'running'
+	});
+
+
+}) (window)
+
 
 $('document').ready(function(){
 	$('#twitter').setTweetCounter();
@@ -346,12 +394,10 @@ $(window).resize(function() {
 $(window).keydown(function(e){
 	if (e.which == 37){
 		var anchor = $('#up').attr('href');
-		//$('body,html').animate({scrollTop:$(anchor).position().top+5},200);
 		$('body,html').scrollTop($(anchor).position().top+5);
 		location.hash = anchor;
 	}else if (e.which == 39){
 		var anchor = $('#down').attr('href');
-		//$('body,html').animate({scrollTop:$(anchor).position().top+5},200);
 		$('body,html').scrollTop($(anchor).position().top+5);
 		location.hash = anchor;
 	}
@@ -372,6 +418,7 @@ function compressGoogleUrl(url ,callb){
 		}
 	});
 };
+
 /* =============================================================
  * bootstrap-scrollspy.js v2.0.4
  * http://twitter.github.com/bootstrap/javascript.html#scrollspy
@@ -2118,7 +2165,7 @@ var REGEXP_PRECEDER_PATTERN = '(?:^^\\.?|[+-]|\\!|\\!=|\\!==|\\#|\\%|\\%=|&|&&|&
             var target = $(selector),
                 title = option.title,
                 url = option.url,
-                tags = option.tags,
+                tags = target.data('tags'),
                 maxNum = 5; // display less than 5 items
 
             var query = 'site:'+url+' '+tags;
@@ -2143,15 +2190,15 @@ var REGEXP_PRECEDER_PATTERN = '(?:^^\\.?|[+-]|\\!|\\!=|\\!==|\\#|\\%|\\%=|&|&&|&
                 }
 
                 if ($('li',target).length)
-                    target.prepend("<li><span>"+ title +"</span></li>"); // add title if not empty
+                    target.prepend("<li>"+ title +"</li>"); // add title if not empty
             });
         },
         getLinkbackPosts: function(selector, option){
             var target = $(selector),
                 url = option.url,
-                num = option.num;
-
+                num = option.num | 3;
             option.url = "http://www.google.co.jp?q=link%3A"+encodeURIComponent(url)+"&output=rss&num="+num+"&ie=utf-8";
+            console.log(option.url);
             this.getfeeds(selector, option);
         },
         getDate: function(publishedDate){
@@ -2247,15 +2294,27 @@ $.feeder = new $.Feeder(window, {}, function(){
             url: 'http://iaarchiver.tumblr.com/rss',
             title: '<span class="column-title websymbolsliga pane tumblr">Recent Quotes</span>',
             key: ''
+        }),
+        $.feeder.getRelatedPosts('#related',{
+            url: location.href,
+            title: '<span class="column-title websymbolsliga pane star">Related Posts</span>'
+        }),
+        $.feeder.getLinkbackPosts('#linkback',{
+            url: location.href,
+            num: 3,
+            title: '<span class="column-title websymbolsliga pane replyall">Linkback Posts</span>'
         })
     )
     .done(function() {
         refresh();
+        window.indicator.stop();
+        
     })
     .fail(function() {
         console.log('fail: jQuery.Feeder');
     });
 });
+
 /*! Copyright (c) 2013 Brandon Aaron (http://brandonaaron.net)
  * Licensed under the MIT License (LICENSE.txt).
  *

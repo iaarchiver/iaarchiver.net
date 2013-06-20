@@ -78,7 +78,7 @@
             var target = $(selector),
                 title = option.title,
                 url = option.url,
-                tags = option.tags,
+                tags = target.data('tags'),
                 maxNum = 5; // display less than 5 items
 
             var query = 'site:'+url+' '+tags;
@@ -103,15 +103,15 @@
                 }
 
                 if ($('li',target).length)
-                    target.prepend("<li><span>"+ title +"</span></li>"); // add title if not empty
+                    target.prepend("<li>"+ title +"</li>"); // add title if not empty
             });
         },
         getLinkbackPosts: function(selector, option){
             var target = $(selector),
                 url = option.url,
-                num = option.num;
-
+                num = option.num | 3;
             option.url = "http://www.google.co.jp?q=link%3A"+encodeURIComponent(url)+"&output=rss&num="+num+"&ie=utf-8";
+            console.log(option.url);
             this.getfeeds(selector, option);
         },
         getDate: function(publishedDate){
@@ -207,10 +207,21 @@ $.feeder = new $.Feeder(window, {}, function(){
             url: 'http://iaarchiver.tumblr.com/rss',
             title: '<span class="column-title websymbolsliga pane tumblr">Recent Quotes</span>',
             key: ''
+        }),
+        $.feeder.getRelatedPosts('#related',{
+            url: location.href,
+            title: '<span class="column-title websymbolsliga pane star">Related Posts</span>'
+        }),
+        $.feeder.getLinkbackPosts('#linkback',{
+            url: location.href,
+            num: 3,
+            title: '<span class="column-title websymbolsliga pane replyall">Linkback Posts</span>'
         })
     )
     .done(function() {
         refresh();
+        window.indicator.stop();
+        
     })
     .fail(function() {
         console.log('fail: jQuery.Feeder');

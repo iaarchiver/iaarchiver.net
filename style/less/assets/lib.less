@@ -91,7 +91,7 @@ hr.transparent{
 
 .ul_floatList(){
 	.clearfix;
-	margin:0 !important; padding:0 !important;
+	margin:0; padding:0;
 	li{
 		list-style: none;
 		&>a, &>span{
@@ -228,6 +228,12 @@ hr.transparent{
      -moz-animation-delay: @arguments;
        -o-animation-delay: @arguments;
           animation-delay: @arguments;
+}
+.animation-play-state(...){
+	-webkit-animation-play-state: @arguments;
+   	   -moz-animation-play-state: @arguments;
+         -o-animation-play-state: @arguments;
+            animation-play-state: @arguments;
 }
 
 // 

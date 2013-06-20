@@ -1445,16 +1445,16 @@ hr.transparent {
   content: "";
 }
 .websymbolsliga.views:before {
-  content: "";
+  content: "X";
 }
 .websymbolsliga.rating:before {
   content: "";
 }
 .websymbolsliga.star:before {
-  content: "";
+  content: "t";
 }
 .websymbolsliga.share:before {
-  content: "";
+  content: "@";
 }
 .websymbolsliga.chat:before {
   content: "";
@@ -1507,8 +1507,8 @@ hr.transparent {
 .websymbolsliga.reply:before {
   content: "";
 }
-.websymbolsliga.replyAll:before {
-  content: "";
+.websymbolsliga.replyall:before {
+  content: "+";
 }
 .websymbolsliga.forward:before {
   content: "";
@@ -1526,13 +1526,13 @@ hr.transparent {
   content: "";
 }
 .websymbolsliga.zoomin:before {
-  content: "";
+  content: "\c2";
 }
 .websymbolsliga.zoominoutline:before {
   content: "";
 }
 .websymbolsliga.zoominfill:before {
-  content: "";
+  content: "\c1";
 }
 .websymbolsliga.zoomout:before {
   content: "";
@@ -1661,7 +1661,7 @@ hr.transparent {
   content: "";
 }
 .websymbolsliga.done:before {
-  content: "Q";
+  content: "\f5";
 }
 .websymbolsliga.doneoutline:before {
   content: "";
@@ -2562,8 +2562,8 @@ iframe.frame {
 }
 .menu {
   zoom: 1;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 1.9em;
@@ -2644,8 +2644,44 @@ iframe.frame {
   text-decoration: none;
   color: #f9f9f9;
 }
+.menu .websymbolsliga {
+  font-size: 13px;
+  line-height: 2em;
+}
 @media screen and (max-width: 52em) {
   
+}
+#indicator {
+  height: 28px;
+  width: 38px;
+  -webkit-animation: blink 0.4s 2 linear;
+  -moz-animation: blink 0.4s 2 linear;
+  -o-animation: blink 0.4s 2 linear;
+  animation: blink 0.4s 2 linear;
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.blink_anime 0% {
+  opacity: 1;
+}
+.blink_anime 50% {
+  opacity: 0.3;
+}
+.blink_anime 100% {
+  opacity: 1;
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .pagination {
   height: 36px;
@@ -2789,8 +2825,8 @@ iframe.frame {
 }
 .sidebar .sidebar-content ul {
   zoom: 1;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
   font-size: 13px;
   line-height: 1.9em;
 }
@@ -2908,6 +2944,9 @@ iframe.frame {
   color: #f9f9f9;
   text-decoration: none;
 }
+.sidebar .sidebar-content ul li.social {
+  line-height: 1.9em;
+}
 .sidebar .sidebar-content ul #related li a,
 .sidebar .sidebar-content ul #linkback li a {
   height: 17px;
@@ -2916,6 +2955,9 @@ iframe.frame {
 .sidebar .sidebar-content ul #related li a b,
 .sidebar .sidebar-content ul #linkback li a b {
   font-weight: normal;
+}
+.sidebar .sidebar-content ul #related li {
+  display: none;
 }
 @media screen and (max-width: 30em) {
   .sidebar .sidebar-content {
@@ -2964,6 +3006,9 @@ iframe.frame {
     display: block;
     width: 205px;
   }
+  .sidebar .sidebar-content ul li .date {
+    padding-left: 0;
+  }
   .sidebar .sidebar-content ul li.active a {
     color: #dddddd;
     background-color: rgba(64, 64, 64, 0.75);
@@ -2974,6 +3019,10 @@ iframe.frame {
   .sidebar .sidebar-content ul li > span a {
     line-height: 24px;
     height: 24px;
+  }
+  .sidebar #related li,
+  .sidebar #linkback li {
+    display: block !important;
   }
   .sidebar #related li a,
   .sidebar #linkback li a {
@@ -3000,8 +3049,8 @@ iframe.frame {
 }
 .ex-sidebar .ex-sidebar-content {
   zoom: 1;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 1.9em;
@@ -3083,10 +3132,14 @@ iframe.frame {
   text-decoration: none;
   color: #f9f9f9;
 }
+.ex-sidebar .ex-sidebar-content .websymbolsliga {
+  font-size: 13px;
+  line-height: 2em;
+}
 .ex-sidebar .ex-sidebar-content li a {
   background: none;
   border-color: transparent;
-  width: 180px;
+  width: 178px;
   font-size: .9em;
 }
 .ex-sidebar .ex-sidebar-content li a:hover {
@@ -3475,7 +3528,7 @@ iframe.frame {
   padding: 0 0 15px 4px;
 }
 .footer .menu {
-  max-width: 716px;
+  max-width: 712px;
   padding: 0 0 25px;
 }
 .footer .menu li a {
@@ -3487,7 +3540,11 @@ iframe.frame {
 }
 @media screen and (max-width: 30em) {
   .footer {
-    margin-left: 0;
+    margin-left: 2px;
+    padding: 0;
+  }
+  .footer .generated_from_feeds {
+    padding: 0 4px;
   }
   .footer .generated_from_feeds li a {
     width: 100%;
