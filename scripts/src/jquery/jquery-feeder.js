@@ -209,7 +209,7 @@ $.feeder = new $.Feeder(window, {}, function(){
             key: ''
         }),
         $.feeder.getRelatedPosts('#related',{
-            url: location.href,
+            url: 'http://iaarchiver.net/post',
             title: '<span class="column-title websymbolsliga pane star">Related Posts</span>'
         }),
         $.feeder.getLinkbackPosts('#linkback',{

@@ -14,9 +14,8 @@
 @import "disqus"; // disqus
 
 /** fonts **/
-@import "websymbols";
-@import "websymbolsliga";
 @import "zocial";
+@import "websymbolsliga";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
 /////////////////////////////////// STYLE //
@@ -131,8 +130,8 @@ span.date {
 		font-size:1.2em;
 		color: #444;
 		&:before{
-			content:'&';
-			font-family: 'WebSymbolsRegular';
+			content:'\d0';
+			font-family: 'WebSymbolsLigaRegular';
 			margin-right:0.5em;
 		}
 	}
@@ -280,17 +279,16 @@ iframe.frame{
 		#loader-logo{
 		    position: relative;
 		    margin: 0; padding: 0;
-		    font-size: 10em;
-			font-size: 140px;
+			font-size: 134px;
 		    .loader-logo-f{
-				line-height: 1em;
+		    	height: 150px;
 		        position: absolute;
 		        top:0; left: 50%;
 		        margin-left: -80px;
 		        z-index: 99;
 		    }
 		    .loader-logo-b{
-				line-height: 1em;
+		    	height: 150px;
 		        position: absolute;
 		        top:0; left: 50%;
 		        margin-left: -80px;
@@ -412,8 +410,11 @@ iframe.frame{
 			display:block !important;
 			a{
 				text-align: center;
-				line-height: 2.5em;
-				margin: 0; padding: 0;
+				height: 2.5em;
+				margin: 0; padding: .75em 0;
+				.websymbolsliga:before{
+					margin-left: -2em;
+				}
 			}
 		}
 		a,span{
@@ -520,7 +521,8 @@ iframe.frame{
 			.date{ text-align:right;}
 		}
 	}
-}}//-[END:.ex-sidebar]
+}}
+//-[END:.ex-sidebar]
 
 //-[.blog]
 .blog{
@@ -598,7 +600,7 @@ iframe.frame{
 	margin-bottom: 15px;
 	a:hover{
 		color: @c_symb !important;
-		border-bottom: 1px solid @c_symb;
+		border-bottom: none;
 	}
 	h3 a {
 		span.websymbols{
@@ -695,13 +697,11 @@ iframe.frame{
 			}
 		}
 	}
-
 }
 @media screen and (max-width: @w_mobile_em){
 	.footer{
-		margin-left:2px; padding: 0;
+		margin-left:2px; padding: 0 4px;
 		.generated_from_feeds{
-			padding: 0 4px;
 			li a{ width: 100%;}
 		}
 	}
