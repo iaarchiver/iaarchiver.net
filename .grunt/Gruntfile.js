@@ -1,4 +1,6 @@
 var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;
+var replaceSnippet = require('./snippets').replaceSnippet;
+
 
 module.exports = function(grunt) {
 
@@ -36,14 +38,16 @@ module.exports = function(grunt) {
 		},
 		connect: {
 			options :{
-				port: 9000,
+				port: 3000,
+				hostname: '*',
 				base: '..',
 				middleware: function (connect, options) {
-					connect.static.mime.default_type = 'text/html';
+					connect.static.mime.default_type = 'text/html'; // hack for scriptogr.am
 				    return [
+				    	replaceSnippet,
 				        rewriteRulesSnippet, // RewriteRules support
-				        connect.static(require('path').resolve(options.base)) // mount filesystem
-				    ];
+				        connect.static(require('path').resolve(options.base),'./html')
+				        ];
 				}
 			},
 	        rules: {

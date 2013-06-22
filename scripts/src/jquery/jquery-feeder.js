@@ -213,7 +213,7 @@ $.feeder = new $.Feeder(window, {}, function(){
             title: '<span class="column-title websymbolsliga pane star">Related Posts</span>'
         }),
         $.feeder.getLinkbackPosts('#linkback',{
-            url: location.href,
+            url: 'http://iaarchiver.net',
             num: 3,
             title: '<span class="column-title websymbolsliga pane replyall">Linkback Posts</span>'
         })

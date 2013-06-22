@@ -522,7 +522,18 @@ iframe.frame{
 		}
 	}
 }}
-//-[END:.ex-sidebar]
+@media screen and (max-width: @w_mobile_em) {
+.ex-sidebar{
+	.ex-sidebar-content{
+		li a{
+			margin: 0;
+			width: 100%;
+			&:hover{
+				margin:0;
+			}
+		}
+	}
+}}//-[END:.ex-sidebar]
 
 //-[.blog]
 .blog{

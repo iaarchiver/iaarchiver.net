@@ -612,7 +612,7 @@ hr.transparent {
   border-radius: 3px;
   color: #555;
   background-color: #f0f0f0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   border: 1px solid #f2f2f2;
   border: 1px solid rgba(128, 128, 128, 0.1);
   margin: 0 1px 1px 0;
@@ -634,7 +634,7 @@ hr.transparent {
   border-radius: 3px;
   color: #555;
   background-color: #f0f0f0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   border: 1px solid #f2f2f2;
   border: 1px solid rgba(128, 128, 128, 0.1);
   margin: 0 1px 1px 0;
@@ -2236,7 +2236,7 @@ span.date {
   border-radius: 3px;
   color: #555;
   background-color: #f0f0f0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   border: 1px solid #f2f2f2;
   border: 1px solid rgba(128, 128, 128, 0.1);
   margin: 0 1px 1px 0;
@@ -2320,7 +2320,7 @@ iframe.frame {
   border-radius: 3px;
   color: #555;
   background-color: #f0f0f0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   border: 1px solid #f2f2f2;
   border: 1px solid rgba(128, 128, 128, 0.1);
   margin: 0 1px 1px 0;
@@ -2355,7 +2355,7 @@ iframe.frame {
   border-radius: 3px;
   color: #555;
   background-color: #f0f0f0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   border: 1px solid #f2f2f2;
   border: 1px solid rgba(128, 128, 128, 0.1);
   margin: 0 1px 1px 0;
@@ -2580,7 +2580,7 @@ iframe.frame {
   border-radius: 3px;
   color: #555;
   background-color: #f0f0f0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   border: 1px solid #f2f2f2;
   border: 1px solid rgba(128, 128, 128, 0.1);
   margin: 0 1px 1px 0;
@@ -2615,7 +2615,7 @@ iframe.frame {
   border-radius: 3px;
   color: #555;
   background-color: #f0f0f0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   border: 1px solid #f2f2f2;
   border: 1px solid rgba(128, 128, 128, 0.1);
   margin: 0 1px 1px 0;
@@ -2810,7 +2810,7 @@ iframe.frame {
   border-radius: 3px;
   color: #555;
   background-color: #f0f0f0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   border: 1px solid #f2f2f2;
   border: 1px solid rgba(128, 128, 128, 0.1);
   margin: 0 1px 1px 0;
@@ -2845,7 +2845,7 @@ iframe.frame {
   border-radius: 3px;
   color: #555;
   background-color: #f0f0f0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   border: 1px solid #f2f2f2;
   border: 1px solid rgba(128, 128, 128, 0.1);
   margin: 0 1px 1px 0;
@@ -2881,7 +2881,7 @@ iframe.frame {
   border-radius: 3px;
   color: #555;
   background-color: #f0f0f0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   border: 1px solid #f2f2f2;
   border: 1px solid rgba(128, 128, 128, 0.1);
   margin: 0 1px 1px 0;
@@ -2954,6 +2954,15 @@ iframe.frame {
   }
   .ex-sidebar .ex-sidebar-content li a .date {
     text-align: right;
+  }
+}
+@media screen and (max-width: 30em) {
+  .ex-sidebar .ex-sidebar-content li a {
+    margin: 0;
+    width: 100%;
+  }
+  .ex-sidebar .ex-sidebar-content li a:hover {
+    margin: 0;
   }
 }
 .blog {
@@ -3096,7 +3105,7 @@ iframe.frame {
   border-radius: 3px;
   color: #555;
   background-color: #f0f0f0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   border: 1px solid #f2f2f2;
   border: 1px solid rgba(128, 128, 128, 0.1);
   margin: 0 1px 1px 0;
