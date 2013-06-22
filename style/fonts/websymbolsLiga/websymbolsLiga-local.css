@@ -1,0 +1,13 @@
+
+
+
+@font-face{ 
+	font-family: 'WebSymbolsLigaRegular';
+		src: url('WebSymbolsLiga-Regular.eot');
+		src: url('WebSymbolsLiga-Regular.eot?#iefix') format('embedded-opentype'),
+			url('WebSymbolsLiga-Regular.woff') format('woff'),
+			url('WebSymbolsLiga-Regular.ttf') format('truetype'),
+			url('WebSymbolsLiga-Regular.svg#WebSymbolsRegular') format('svg');
+	/*text-rendering: optimizeLegibility;*/
+}
+
