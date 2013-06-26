@@ -21,7 +21,7 @@ utils.replaceSnippet = function(req,res,next){
 			chunk_str = setupHTML(req, res, chunk_str);
 			chunk_str = addLrSnippet(req, res, chunk_str);
 		}
-		
+
 		data.push(chunk_str);
 
 		return true;

@@ -1,18 +1,18 @@
 
 // UserAgent Information
 var isWin9X = (navigator.appVersion.toLowerCase().indexOf('windows 98')+1),
-	isOpera = (navigator.userAgent.toLowerCase().indexOf('opera')+1?1:0),
-	isIE = (!isOpera && navigator.appName.toLowerCase().indexOf('internet explorer')+1?1:0),
-	isSafari = (navigator.appVersion.toLowerCase().indexOf('safari')+1?1:0),
-	isFirefox = (navigator.userAgent.indexOf("Firefox")+1?1:0),
-	isChrome = (navigator.userAgent.indexOf("Chrome")+1?1:0),
-	isiOS = (((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0)?1:0),
-	isAndroid = ((navigator.userAgent.indexOf('Android') > 0)?1:0),
-	isMobile = (isiOS || isAndroid?1:0);
+isOpera = (navigator.userAgent.toLowerCase().indexOf('opera')+1?1:0),
+isIE = (!isOpera && navigator.appName.toLowerCase().indexOf('internet explorer')+1?1:0),
+isSafari = (navigator.appVersion.toLowerCase().indexOf('safari')+1?1:0),
+isFirefox = (navigator.userAgent.indexOf("Firefox")+1?1:0),
+isChrome = (navigator.userAgent.indexOf("Chrome")+1?1:0),
+isiOS = (((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0)?1:0),
+isAndroid = ((navigator.userAgent.indexOf('Android') > 0)?1:0),
+isMobile = (isiOS || isAndroid?1:0);
 
 
 $(document).ready(function(){
-	innerPageLinkGen($('div.innerTarget'),$('a.innerLink')); // generate innerlinks
+    innerPageLinkGen($('div.innerTarget'),$('a.innerLink')); // generate innerlinks
 });
 
 $(window).resize(function() {
@@ -50,4 +50,4 @@ function compressGoogleUrl(url ,callb){
 			callb(data.error  ? false : data.id);
 		}
 	});
-};
+}

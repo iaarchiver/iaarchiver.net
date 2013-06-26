@@ -1,6 +1,5 @@
 var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;
-var replaceSnippet = require('./snippets').replaceSnippet;
-
+var replaceSnippet = require('./snippets').replaceSnippet;      
 
 module.exports = function(grunt) {
 
@@ -43,7 +42,8 @@ module.exports = function(grunt) {
 				base: '..',
 				middleware: function (connect, options) {
 					connect.static.mime.default_type = 'text/html'; // hack for scriptogr.am
-				    return [
+				    
+				   return [
 				    	replaceSnippet, // replace HTML for setup localserver
 				        rewriteRulesSnippet, // RewriteRules support
 				        connect.static(require('path').resolve(options.base),'./html')

@@ -1,0 +1,9 @@
+{
+	"folders":
+	[
+		{
+			"path": "~/Dropbox/Dev/Grunt/scriptogr.am",
+			 "file_exclude_patterns": ["*.sublime-workspace"]
+		}
+	]
+}
