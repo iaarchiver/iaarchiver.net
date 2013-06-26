@@ -78,7 +78,7 @@
       {{#is_index}}<div class="pagination">{{pagination}}</div>{{/is_index}}
       <div class="sidebar-content" id="sspy">
         <ul>
-          <li class="ctrl" id="ctrl-up"><span class="websymbols icon"><a href="#head" id="up">:</a></span></li>
+          <li class="ctrl" id="ctrl-up"><a href="#head" id="up"><span class="websymbolsliga icon topfill"></span></a></li>
           {{#posts}}
           {{#is_index}}
           <li><a href="#" class="innerLink">{{title}}<span class="date">{{prettydate}}</span></a></li>
@@ -101,7 +101,7 @@
           {{/if_tags}}
             {{/is_post}}
           {{/posts}}
-          <li class="ctrl" id="ctrl-down"><a href="#foot" id="down"><span class="websymbols icon">;</span></a></li>
+          <li class="ctrl" id="ctrl-down"><a href="#foot" id="down"><span class="websymbolsliga icon bottomfill"></span></a></li>
         </ul>
       </div><!--[END] .sidebar-content -->
     </div><!--[END] .sidebar -->
@@ -113,7 +113,7 @@
       <!-- index -->
        {{#is_index}}
         <div class="post innerTarget">
-          <div class="title"><h3><a href="{{permalink}}">{{title}} {{#post_permalink}}<span class="websymbols icon">K</span>{{/post_permalink}}</a> {{#post_permalink}}<a href="{{post_permalink}}">#</a>{{/post_permalink}}</h3></div>
+          <div class="title"><h3><a href="{{permalink}}">{{title}} {{#post_permalink}}<span class="websymbolsliga icon link"></span>{{/post_permalink}}</a> {{#post_permalink}}<a href="{{post_permalink}}"><span class="websymbolsliga icon commentempty"></span></a>{{/post_permalink}}</h3></div>
           <div class="content">
             {{#date}}
             <div class="meta">
@@ -128,7 +128,7 @@
               <!-- if tags -->
               {{#if_tags}}
               <ul class="menu">
-                  <li class="tag"><span class="websymbols icon">,</span></li>
+                  <li class="tag"><span class="websymbolsliga icon tag"></span></li>
                 {{#tags}}
                   <li class="tag"><a href="{{base_url}}/tag/{{name}}">{{name}}</a></li>
                 {{/tags}}
@@ -143,7 +143,7 @@
         <!-- post permalink -->
         {{#is_post}}
           <div class="post">
-            <div class="title"><h3><a href="{{permalink}}">{{title}} {{#post_permalink}}<span class="websymbols">Link</span>{{/post_permalink}}</a></h3></div>
+            <div class="title"><h3><a href="{{permalink}}">{{title}} {{#post_permalink}}<span class="websymbolsliga icon link"></span>{{/post_permalink}}</a></h3></div>
             <div class="content">
               {{#date}}
               <div class="meta">
@@ -158,7 +158,7 @@
                 <!-- if tags -->
                 {{#if_tags}}
                 <ul class="menu">
-                    <li class="tag"><span class="websymbols icon">,</span></li>
+                    <li class="tag"><span class="websymbolsliga icon tag"></span></li>
                   {{#tags}}
                     <li class="tag"><a href="{{base_url}}/tag/{{name}}">{{name}}</a></li>
                   {{/tags}}
@@ -200,7 +200,7 @@
                 <!-- if tags -->
                 {{#if_tags}}
                 <ul class="tags">
-                  <li><span class="websymbols icon">'</span></li>
+                  <li><span class="websymbolsliga icon tag"></span></li>
                   {{#tags}}
                   <li><a href="{{base_url}}/tag/{{name}}">{{name}}</a></li>
                   {{/tags}}
@@ -314,4 +314,4 @@
   <script type="text/javascript" src="http://s3.iaarchiver.net/scripts/all.min.js"></script>
   <!-- [END] Load base js -->
 
-  </body></html>                                        
+  </body></html>                                                  
