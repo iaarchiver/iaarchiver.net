@@ -1,11 +1,10 @@
 ;(function(window){
 	var target = document.getElementById('loader-logo');
 	if (!target) return false; 
-
 	var colorArray = ['#00B5B6','#2D358E','#C061A5','#EC5F48','#444','#B66327','#F9A236','#85C440'];
 
 	var loader_f = document.createElement('span'),
-	    loader_b = document.createElement('span');
+		loader_b = document.createElement('span');
 
 	loader_f.className = 'loader-logo-f websymbolsliga icon';
 	loader_b.className = 'loader-logo-b websymbolsliga icon';
@@ -25,7 +24,6 @@
 	})();
 
 	target.addEventListener('mouseover',function(){
-		//console.log('called');
 },false);
 
 })(window);

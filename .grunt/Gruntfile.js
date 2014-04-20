@@ -1,5 +1,5 @@
 var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;
-var replaceSnippet = require('./snippets').replaceSnippet;      
+var replaceSnippet = require('./snippets').replaceSnippet;
 
 module.exports = function(grunt) {
 
@@ -32,9 +32,6 @@ module.exports = function(grunt) {
 				dest: '../scripts/all.min.js'
 			}
 		},
-		replace: {
-
-		},
 		connect: {
 			options :{
 				port: 3000,
@@ -42,18 +39,15 @@ module.exports = function(grunt) {
 				base: '..',
 				middleware: function (connect, options) {
 					connect.static.mime.default_type = 'text/html'; // hack for scriptogr.am
-				    
-				   return [
-				    	replaceSnippet, // replace HTML for setup localserver
-				        rewriteRulesSnippet, // RewriteRules support
-				        connect.static(require('path').resolve(options.base),'./html')
-				        ];
+					return [
+						replaceSnippet, // replace HTML for setup localserver
+						rewriteRulesSnippet, // RewriteRules support
+						connect.static(require('path').resolve(options.base),'./html')
+					];
 				}
 			},
-	        rules: {
-	            '/': '.grunt/html/'
-	        }
- 		},
+			rules: { '/': '.grunt/html/'}
+		},
 		watch: {
 			options: {
 				livereload: true,
@@ -67,7 +61,7 @@ module.exports = function(grunt) {
 				files: ['../scripts/src/**/*.js'],
 				tasks: ['concat', 'uglify']
 			}
-	    }
+		}
 	});
 
 	// load grunt-* packages

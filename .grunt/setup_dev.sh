@@ -9,7 +9,7 @@ DIR='html'
 
 wget -r -np $SITEURL -N -nH -P $DIR
 
-if [[ ! -d $DIR]];then
+if [[ ! -d $DIR ]];then
 	exit
 fi
 

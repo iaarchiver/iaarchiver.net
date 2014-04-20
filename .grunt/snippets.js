@@ -1,9 +1,9 @@
 
 var utils = module.exports,
-	debug = function(err){ if (_debug = true) console.log(err); };
+	 debug = function(err){ if (_debug = true) console.log(err); };
 
 var write_default,
-	end_default;
+	 end_default;
 
 utils.replaceSnippet = function(req,res,next){
 	if (write_default === undefined) write_default = res.write;
@@ -15,7 +15,7 @@ utils.replaceSnippet = function(req,res,next){
 		if (chunk.length === 0 || !this._hasBody) return false;
 
 		var chunk_str = chunk instanceof Buffer ? chunk.toString(encoding) : chunk,
-			isHTML = /text\/html\;.*/.test(req.client._httpMessage._headers['content-type']);
+			 isHTML = /text\/html\;.*/.test(req.client._httpMessage._headers['content-type']);
 
 		if (isHTML){
 			chunk_str = setupHTML(req, res, chunk_str);
@@ -44,12 +44,12 @@ utils.replaceSnippet = function(req,res,next){
 function setupHTML(req, res, str){
 	debug('setupHTML:')
 
-	var nestLevel = req.originalUrl.split('/').length -1,
-		relativeBase = new Array(nestLevel).join('../');
+		var nestLevel = req.originalUrl.split('/').length -1,
+			 relativeBase = new Array(nestLevel).join('../');
 
 	return str
-			.replace(/http:\/\/s3\.iaarchiver\.net\//gm, relativeBase)
-			.replace(/http:\/\/iaarchiver\.net\//gm, '');
+		.replace(/http:\/\/s3\.iaarchiver\.net\//gm, relativeBase)
+		.replace(/http:\/\/iaarchiver\.net\//gm, '');
 
 }
 
@@ -57,17 +57,17 @@ function setupHTML(req, res, str){
 function addLrSnippet(req, res, str){
 	debug('addLrSnippet:')
 
-	var port = '35729',
-		insert = [
-			"<!-- livereload snippet -->",
-			"<script>document.write('<script src=\"http://'",
-			" + (location.host || 'localhost').split(':')[0]",
-			" + ':" + port + "/livereload.js?snipver=1\"><\\/script>')",
-			"</script>",
-			""
-			].join('\n');
+		var port = '35729',
+			 insert = [
+				 "<!-- livereload snippet -->",
+			 "<script>document.write('<script src=\"http://'",
+			 " + (location.host || 'localhost').split(':')[0]",
+			 " + ':" + port + "/livereload.js?snipver=1\"><\\/script>')",
+			 "</script>",
+			 ""
+				 ].join('\n');
 
 	return str.replace(/<\/body>/, function(w){
-					return insert + w;
-				});
+		return insert + w;
+	});
 }

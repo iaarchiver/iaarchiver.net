@@ -3,6 +3,7 @@
 var isWin9X = (navigator.appVersion.toLowerCase().indexOf('windows 98')+1),
 isOpera = (navigator.userAgent.toLowerCase().indexOf('opera')+1?1:0),
 isIE = (!isOpera && navigator.appName.toLowerCase().indexOf('internet explorer')+1?1:0),
+isIE8 = (isIE&& navigator.appVersion.toLowerCase().indexOf('msie 8.0')?1:0);
 isSafari = (navigator.appVersion.toLowerCase().indexOf('safari')+1?1:0),
 isFirefox = (navigator.userAgent.indexOf("Firefox")+1?1:0),
 isChrome = (navigator.userAgent.indexOf("Chrome")+1?1:0),
@@ -24,12 +25,13 @@ $(window).resize(function() {
 });
 
 $(window).keydown(function(e){
+	var anchor;
 	if (e.which == 37){
-		var anchor = $('#up').attr('href');
+		anchor = $('#up').attr('href');
 		$('body,html').scrollTop($(anchor).position().top+5);
 		location.hash = anchor;
 	}else if (e.which == 39){
-		var anchor = $('#down').attr('href');
+		anchor = $('#down').attr('href');
 		$('body,html').scrollTop($(anchor).position().top+5);
 		location.hash = anchor;
 	}
@@ -50,4 +52,23 @@ function compressGoogleUrl(url ,callb){
 			callb(data.error  ? false : data.id);
 		}
 	});
+}
+
+
+// do before DOMContentLoaded
+function doASAP(dofunc){
+	var interval = 50, // [ms]
+		counter = 10; // wait DomLoaded for [interval x counter] ms
+	(function doit(){
+		try{
+			if (!--counter){
+				console.log('Error: doASAP');
+				return false;
+			}
+			dofunc();
+
+		}catch(e){
+			window.setTimeout(doit, interval);
+		}
+	})();
 }

@@ -18,7 +18,7 @@
                 target = $(selector);
 
             this.feeds(option, function(result){
-                if (result.error || result.feed.entries.length==0){
+                if (result.error || result.feed.entries.length===0){
                     console.log('unavailable feed'); return false;}
 
                 var feedUL = $('<ul class="menu generated_from_feeds">');       
@@ -45,7 +45,7 @@
                 option.num = 100; // seach keyword in recent 100 feeds
 
             this.feeds(option, function(result){
-                if (result.error || result.feed.entries.length==0){
+                if (result.error || result.feed.entries.length===0){
                     console.log('unavailable feed'); return;}
                 
                 for (var i = 0; i < result.feed.entries.length; i++) {
@@ -67,7 +67,7 @@
 
                     msgContainer
                         .append(msg)
-                        .glurl2img(function(){dfd.resolve();}); // 
+                        .glurl2img(dfd.resolve); // 
                     msgContainer.replaceAll(target);
                     break;
                 }
@@ -92,6 +92,8 @@
                         isSamePost = entry.link.split('/').pop() == location.pathname.split('/').pop();
 
                     if (isSamePost) continue;
+
+                    
                     target.append(function(){
                         var item = $('<a>')
                             .attr('href',entry.link)
@@ -170,7 +172,7 @@
                 callback( data.error  ? false : data.longUrl );
             }
         });
-    };
+    }
     /*
     $.fn.Feeder = function( option, callb) {
         return this.each(function() {
@@ -221,7 +223,7 @@ $.feeder = new $.Feeder(window, {}, function(){
     .done(function() {
         refresh();
         window.indicator.stop();
-        
+
     })
     .fail(function() {
         console.log('fail: jQuery.Feeder');

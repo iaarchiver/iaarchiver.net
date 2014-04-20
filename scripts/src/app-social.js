@@ -53,7 +53,7 @@ $.fn.setLikeCounter = function(url){
 			dataType: 'jsonp',
 			error:function(XHR, status, errorThrown){
 				console.log(status);
-        	},
+			},
 			success: function(data) {
 					var count = (data.shares)? data.shares : 0;
 					scounter

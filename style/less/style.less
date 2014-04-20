@@ -206,6 +206,7 @@ iframe.frame{
 
 // [.pagination]
 .pagination {
+	visibility: hidden;
 	height: 36px;
 	clear: both;
 
@@ -235,6 +236,7 @@ iframe.frame{
 			}
 			&.active a {
 				color: #fff;
+				background: @c_link;
 				background: @c_link_a;
 			}
 			&.disabled a,
@@ -249,7 +251,7 @@ iframe.frame{
 	}
 }
 .pgn{
-  color: #5691CD;
+  color: @c_link;
   cursor:pointer;
   a {
     border-right:1px solid #ddd!important;
@@ -452,7 +454,7 @@ iframe.frame{
 	float: none;
 	padding-left: 2px;
 	max-width: @w_portrait;
-
+	
 	.ex-sidebar-content{
 		.menu;
 		margin-right: 5px;
@@ -471,6 +473,7 @@ iframe.frame{
 			img {
 				display: block;
 				margin: 10px auto;
+				width: inherit; // for ie8
 				max-width: 90%;
 				height: auto;
 				border: 8px solid @white;
@@ -488,11 +491,11 @@ iframe.frame{
 	.scrollbar{
 		.border-radius(2px);
 		display:none;
-	    width: 4px; height: auto;
+		width: 4px; height: auto;
 		background-color: #f0f0f0;// for ie
 		background-color: rgba(0,0,0,0.25);
-	    position: absolute;
-	    top: 0; right: 0;
+		position: absolute;
+		top: 0; right: 22px;
 	}
 }
 @media screen and (min-width: @w_portrait_em) {
@@ -502,7 +505,7 @@ iframe.frame{
 .ex-sidebar{
 	margin:  0;
 	padding: 3% 0;
-	top: 0; left: 1040px;
+	top: 0; left: 1030px;
 	position: fixed;
 	overflow: hidden;
 	width: 305px; height: 92%;
