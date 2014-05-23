@@ -4,14 +4,14 @@
 # ---------------------------------
 
 PROJECT_NAME="scriptogram"
-PROJECT_BASE=$(git rev-parse --show-toplevel)
+PROJECT_BASE=$( cd `dirname $0`; git rev-parse --show-toplevel )
 
 function create_workspace
 {
 	tmux send-keys			-t $PROJECT_NAME:0.0 "vim" C-m
-	tmux split-window		-t $PROJECT_NAME:0.0 -h
+	tmux split-window		-t $PROJECT_NAME:0.0 -h -c '#{pane_current_path}'
 	tmux send-keys			-t $PROJECT_NAME:0.1 "git status" C-m
-	tmux split-window		-t $PROJECT_NAME:0.1
+	tmux split-window		-t $PROJECT_NAME:0.1 -v -c '#{pane_current_path}'
 	tmux send-keys			-t $PROJECT_NAME:0.2 "cd .grunt" C-m
 	tmux send-keys			-t $PROJECT_NAME:0.2 "grunt"
 
@@ -22,23 +22,19 @@ function create_workspace
 
 # -------------------------------------------------
 
-### TMUX内からの起動であれば$RUN_INSIDE_TMUXをTRUEにする
-if [[ $TMUX ]]; then RUN_INSIDE_TMUX=TRUE;fi
+### TMUX内からの起動であれば`unset $TMUX`する
+if [[ $TMUX ]]; then
+	RUN_INSIDE_TMUX=TRUE
+	unset TMUX
+fi
 
-### TMUX内ならば一度$TMUXを空にする
-[[ $RUN_INSIDE_TMUX ]] \
-	&& TMUX_TMP=$TMUX; unset TMUX
 
 ### $PROJECT_NAMEのセッションがなければ新規作成して展開する
-( cd $PROJECT_BASE; tmux new-session -d -s $PROJECT_NAME -n "MAIN" ) \
+(cd $PROJECT_BASE; tmux new-session -d -s $PROJECT_NAME -n "MAIN") \
 	&& create_workspace
-
-### TMUX内ならば$TMUXを元に戻す
-[[ $RUN_INSIDE_TMUX ]] \
-	&& TMUX=$TMUX_TMP; unset TMUX_TMP
 
 ### $PROJECT_NAMEのセッションへ切り替える
 [[ $RUN_INSIDE_TMUX ]] \
-	&& tmux switch-client	-t $PROJECT_NAME \
+	&& tmux switch-client -t $PROJECT_NAME \
 	|| tmux attach -t $PROJECT_NAME
 
