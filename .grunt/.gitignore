@@ -1,4 +1,3 @@
-html
-node_modules
-TODO.md
-*.sublime-workspace
+/html
+/node_modules
+/TODO.md
