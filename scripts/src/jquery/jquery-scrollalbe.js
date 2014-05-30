@@ -57,10 +57,12 @@
 							&& (event.preventDefault() || container.css('marginTop',scroll))
 					})
 					// show scrollbar when hover on
-					.hover( function(){ target.find('.scrollbar').fadeIn();},
+					.hover( function(){ target.find('.scrollbar').stop().fadeIn();},
 						function(){ target.find('.scrollbar').fadeOut();})
 					// show scrollbar when loaded
-					.find('.scrollbar').css('height',bar_h).fadeIn().delay(1000).fadeOut();
+					.find('.scrollbar').css('height',bar_h).fadeIn()
+					// hide scrollbar in 1s if not hovered
+					.delay(1000).filter(function(){ return target.is(':not(:hover)')}).fadeOut();
 
 			});
 
