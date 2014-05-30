@@ -1,7 +1,7 @@
 
 // UserAgent Information
 var isWin9X = (navigator.appVersion.toLowerCase().indexOf('windows 98')+1),
-	 isMac = (navigator.appVersion.toLowerCase().indexOf('macintosh'+1)),
+	 isMac = (navigator.appVersion.toLowerCase().indexOf('macintosh')+1),
 	 isOpera = (navigator.userAgent.toLowerCase().indexOf('opera')+1?1:0),
 	 isIE = (!isOpera && navigator.appName.toLowerCase().indexOf('internet explorer')+1?1:0),
 	 isIE8 = (isIE&& navigator.appVersion.toLowerCase().indexOf('msie 8.0')?1:0),
