@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 
 <html lang="ja">
 <head>
@@ -14,9 +14,6 @@
 <meta name="ROBOTS" content="INDEX,FOLLOW">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--[if lt IE 9]>
-	 <script src="http://s3.iaarchiver.net/scripts/ie8.js"></script>
-<![endif]-->
 
 <meta charset="utf-8">
 <!-- OGP -->
@@ -51,23 +48,12 @@ _gaq.push(['_trackPageview']);
 <body data-spy="scroll" data-target="#sspy">
 <div class="wrapper" id="head">
 	<!-- .header -->
-	{{#is_index}}
-	<!-- #eyecatch -->
-	<div id="eyecatch">
-		<div class="eyecatch-content">
-			<div id="loader-logo"></div>
-			<div id="loader-title">Now Archiving</div>
-		</div>
-		<hr class="soften" />
-		<div class="blog-title">{{blog_title}}</div>
-	</div><!-- [END] #eyecatch -->
-	{{/is_index}}
 
 	<div class="header">
 		<ul class="menu">
 			<li class="blog-title"><a href="{{base_url}}">{{author}}</a></li>
 			<li><span id="indicator" class="websymbolsliga icon"></span></li>
-			{{#pages}} 
+			{{#pages}}
 			<li><a href="{{permalink}}">{{title}}</a></li>
 			{{/pages}}
 		</ul>
@@ -89,7 +75,7 @@ _gaq.push(['_trackPageview']);
 				{{/archive_divider}}
 				{{/is_archive}}
 				{{#is_post}}
-				<li><span class="websymbolsliga pane share">SOCIAL BUTTONS</span></li>
+				<li><span class="websymbolsliga pane share">Social Buttons</span></li>
 				<li class="social"><a id="tumblr" class="websymbolsliga pane tumblr" href="#" onclick="window.open('http://www.tumblr.com/share/link?url='+escape('{{permalink}}')+'&name={{title}}',null,'width=450,height=430');">Share on Tumblr</a></li>
 				<li class="social"><a id="twitter" class="websymbolsliga pane twitter" href="https://twitter.com/share?url={{permalink}}" target="_blank">Tweets:<span class="scounter"></span></a></li>
 				<li class="social"><a id="facebook" class="websymbolsliga pane facebook" href="#" target="_blank">Facebook:<span class="scounter"></span></a></li>
@@ -132,7 +118,7 @@ _gaq.push(['_trackPageview']);
 							{{#tags}}
 							<li class="tag"><a href="{{base_url}}/tag/{{name}}">{{name}}</a></li>
 							{{/tags}}
-						</ul>  
+						</ul>
 						{{/if_tags}}
 						<!-- endif -->
 					</div><!--[END] .body-post -->
@@ -204,7 +190,7 @@ _gaq.push(['_trackPageview']);
 							{{#tags}}
 							<li><a href="{{base_url}}/tag/{{name}}">{{name}}</a></li>
 							{{/tags}}
-						</ul>  
+						</ul>
 						{{/if_tags}}
 						<!-- endif -->
 					</div><!--[END] .body-page -->
@@ -271,7 +257,8 @@ google_ad_width = 250;
 google_ad_height = 250;
 //-->
 		</script>
-		<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
 	</div>
 	<div class="slider x50">
@@ -284,7 +271,8 @@ google_ad_width = 320;
 google_ad_height = 50;
 //-->
 		</script>
-		<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
 	</div>
 	<div class="slider x300">
@@ -297,7 +285,8 @@ google_ad_width = 300;
 google_ad_height = 250;
 //-->
 		</script>
-		<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script>
 	</div>
 </div>
@@ -312,3 +301,4 @@ google_ad_height = 250;
 <!-- [END] Load base js -->
 
 </body></html>
+
