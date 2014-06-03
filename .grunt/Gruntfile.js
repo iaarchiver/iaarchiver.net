@@ -50,7 +50,7 @@ module.exports = function(grunt) {
 		watch: {
 			options: {
 				livereload: true,
-				nospawn: true
+				nospawn: false
 			},
 			less : {
 				files : ['../style/less/**/*.less'],
