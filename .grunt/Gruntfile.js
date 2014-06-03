@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 					yuicompress: true
 				},
 				files: {
-					"../style/css/style.min.css": "../style/less/style.less"
+					"../style/css/style.css": "../style/less/style.less"
 				}
 			}
 		},
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 		uglify: {
 			build: {
 				src: ['../scripts/all.js'],
-				dest: '../scripts/all.min.js'
+				dest: '../scripts/all.js'
 			}
 		},
 		connect: {
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: ['../scripts/src/**/*.js'],
-				tasks: ['concat', 'uglify', 'notify']
+				tasks: ['concat', 'notify']
 			}
 		},
 		notify: {
@@ -78,5 +78,25 @@ module.exports = function(grunt) {
 	}
 
 	// set default tasks
-	grunt.registerTask('default',['less', 'concat', 'uglify','configureRewriteRules', 'connect', 'watch']);
+	grunt.registerTask(
+		'default',
+		[
+			'less:dev',
+			'concat',
+			'notify',
+			'configureRewriteRules',
+			'connect',
+			'watch'
+		]
+	);
+
+	// set build tasks
+	grunt.registerTask(
+		'build',
+		[
+			'less:build',
+			'concat',
+			'uglify:build',
+		]
+	);
 };
