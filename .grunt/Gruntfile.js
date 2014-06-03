@@ -54,12 +54,19 @@ module.exports = function(grunt) {
 			},
 			less : {
 				files : ['../style/less/**/*.less'],
-				tasks : ['less']
+				tasks : ['less', 'notify']
 			},
 			js: {
 				files: ['../scripts/src/**/*.js'],
-				tasks: ['concat', 'uglify']
+				tasks: ['concat', 'uglify', 'notify']
 			}
+		},
+		notify: {
+			watch: {
+				options:{
+				message: 'Done, without errors'
+				}
+			},
 		}
 	});
 
