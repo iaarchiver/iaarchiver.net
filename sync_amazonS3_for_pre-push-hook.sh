@@ -19,7 +19,8 @@ exec < /dev/tty
 
 CFGOPT="$HOME/.config/.s3cfg"
 BUCKET="s3://s3.iaarchiver.net/"
-PROJECT="$(git rev-parse --show-toplevel)/*"
+PROJECT="$(git rev-parse --show-toplevel)"
+PRESCRIPT="cd $PROJECT/.grunt; grunt build"
 
 echo "[pre-push hooks]: Sync to AmazonS3?"
 echo "LOCAL:["$PROJECT"] -> REMOTE["$BUCKET"]"
@@ -27,13 +28,16 @@ echo "LOCAL:["$PROJECT"] -> REMOTE["$BUCKET"]"
 read -p "(y/N) : " yn
 
 if [[ "$yn" =~ ^[yY] ]];then
+	### run $PRESCRIPT
+	eval $PRESCRIPT || { echo "Error in PRESCRIPT"; exit 1; }
+	
 	### ignore invisible file/dir
 	s3cmd sync \
 		--config $CFGOPT \
 		--rexclude="^(.*/)*\.+.*" \
 		--recursive \
 		--delete-removed \
-		$PROJECT $BUCKET \
+		$PROJECT/* $BUCKET \
 		&& echo "Synced." \
 		|| echo "Sync failed."
 else
