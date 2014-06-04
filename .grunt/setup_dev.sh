@@ -6,8 +6,9 @@ DIR='html'
 ### if $DIR doesn't exist, exit
 [[ -d $DIR ]] || { echo "setup failed."; exit 1; }
 
-### download html-files to $DIR
+### download only remote-updated html-files
 wget -r -np $SITEURL -N -nH -P $DIR
+# delete -N if need to overwrite all
 
 ### replace a pattern(PTR) in all files of target(DIR)
 PTR1='s/http:\/\/s3\.iaarchiver\.net/http:\/\/localhost\:3000/g'
