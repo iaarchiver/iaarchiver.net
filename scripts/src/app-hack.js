@@ -3,6 +3,12 @@ $(document).ready(function(){
 	// Add prettyprint class to <pre><code>..
 	$('pre').find('code').end().addClass('prettyprint');
 
+	// Add websymbolsliga class to <a> with no-textNode in the same line
+	$('.body-post').find('p, dd')
+		.filter(function(){ return this.childNodes.length==1})
+		.find('> a').addClass('websymbolsliga pane link')
+		.filter('[href^="https://gist.github.com"]').removeClass('link').addClass('github');
+
 	// Add Tag Page Title
 	var p = location.pathname.split('/');
 	var str = '<div class="archive-divider divider_0"><h2>Tag: <b>'+ p.pop()+'</b></h2></div>'; // Attention do .pop() here!
