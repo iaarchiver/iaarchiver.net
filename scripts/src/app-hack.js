@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+	// Add prettyprint class to <pre><code>..
+	$('pre').find('code').end().addClass('prettyprint');
+
 	// Add Tag Page Title
 	var p = location.pathname.split('/');
 	var str = '<div class="archive-divider divider_0"><h2>Tag: <b>'+ p.pop()+'</b></h2></div>'; // Attention do .pop() here!
@@ -112,6 +115,6 @@ function innerPageLinkGen (targetlist,anchorlist){
 		$(this).attr('id','post'+i);
 	});
 	anchorlist.each(function(i){
-		$(this).attr('href','#post'+i);        
+		$(this).attr('href','#post'+i);
 	});
 }
