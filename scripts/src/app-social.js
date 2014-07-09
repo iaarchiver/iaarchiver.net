@@ -63,7 +63,7 @@ $.fn.setLikeCounter = function(url){
 	});
 
 	// open like-button iframe if clicked
-	self.toggle(function(){
+	self.bind('click',function(){
 		var fframe = $('<iframe>')
 		.attr({
 			src: 'http://www.facebook.com/plugins/like.php?layout=button_count&href='+url,
@@ -78,7 +78,7 @@ $.fn.setLikeCounter = function(url){
 			.fadeTo('slow',1)
 			);
 
-	},function(){});
+	});
 }
 
 $.fn.setHatebuCounter = function(url){
